@@ -8,7 +8,27 @@ body {
 	margin: 0;
 	overflow: hidden;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8f54a0 #2e2e2e;
+  }
 
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #2e2e2e;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #06c4ab;
+    border-radius: 5px;
+    border: 2px solid #2e2e2e;
+  }
 hr {
 	border: 0;
 	border-top: 1px solid #ccc;
