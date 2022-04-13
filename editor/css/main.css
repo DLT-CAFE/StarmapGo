@@ -4,11 +4,27 @@
 
 body {
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	margin: 0;
 	overflow: hidden;
 }
-
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+body {
+scrollbar-color: yellow blue;
+scrollbar-color: #87ceeb #ff5621;
+scrollbar-color: auto;
+}
 hr {
 	border: 0;
 	border-top: 1px solid #ccc;
@@ -280,10 +296,11 @@ input.Number {
 select {
 	color: #666;
 	background-color: #ddd;
-	border: 0px;
+	border: 1pxx;
 	text-transform: uppercase;
 	cursor: pointer;
 	outline: none;
+	border-color: hotpink;
 }
 
 	select:hover {
@@ -295,7 +312,7 @@ select {
 #resizer {
 	position: absolute;
 	top: 32px;
-	right: 295px;
+	right: 0px;
 	width: 5px;
 	bottom: 0px;
 	/* background-color: rgba(255,0,0,0.5); */
@@ -304,9 +321,9 @@ select {
 
 #viewport {
 	position: absolute;
-	top: 32px;
+	top: 0px;
 	left: 0;
-	right: 300px;
+	right: 0px;
 	bottom: 0;
 }
 
@@ -326,16 +343,16 @@ select {
 
 #player {
 	position: absolute;
-	top: 32px;
+	top: 0px;
 	left: 0;
-	right: 300px;
+	right: 0px;
 	bottom: 0;
 }
 
 #menubar {
 	position: absolute;
 	width: 100%;
-	height: 32px;
+	height: 56px;
 	background: #eee;
 	padding: 0;
 	margin: 0;
@@ -408,16 +425,19 @@ select {
 
 #sidebar {
 	position: absolute;
-	right: 0;
-	top: 32px;
+	right: 62px;
+	top: 71px;
 	bottom: 0;
-	width: 300px;
-	background: #eee;
+	width: 367px;
+	background: #031f2194;
 	overflow: auto;
+	height: 82vh;
+	border-radius: 14px;
+	border: 1px solid #09362f;
 }
 
 	#sidebar .Panel {
-		color: #888;
+		color: #05eaf2;
 		padding: 10px;
 		border-top: 1px solid #ccc;
 	}
@@ -451,20 +471,20 @@ select {
 
 #toolbar {
 	position: absolute;
-	left: 10px;
-	top: 42px;
-	width: 32px;
-	background: #eee;
+	left: 31px;
+	top: 75px;
+	width: 46px;
+	background: #0c2c2eb5;
 	text-align: center;
 }
 
 	#toolbar button, #toolbar input {
-		height: 32px;
+		height: 34px;
 	}
 
 		#toolbar button img {
-			width: 16px;
-			opacity: 0.5;
+			width: 21px;
+			/* opacity: 0.5; */
 		}
 
 .Outliner {
@@ -482,7 +502,7 @@ select {
 
 	.Outliner .option {
 		padding: 4px;
-		color: #666;
+		color: #f2eeee;
 		white-space: nowrap;
 	}
 
@@ -516,7 +536,7 @@ select {
 }
 
 .Panel {
-	color: #888;
+	color: #f00;
 }
 
 /* */
@@ -580,8 +600,8 @@ select {
 		}
 
 		button.selected {
-			color: #fff;
-			background-color: #08f;
+			color: #15dedd;
+			background-color: #123231d4;
 		}
 
 	input, textarea {
@@ -592,26 +612,28 @@ select {
 
 	select {
 		color: #aaa;
-		background-color: #222;
+		background-color: #0f1c23c9;
 	}
 
 		select:hover {
 			color: #ccc;
-			background-color: #444;
+			background-color: #193140d4;
 		}
 
 	/* UI */
 
 	#menubar {
-		background: #111;
+		background: #091013b0;
+		border-bottom: 1px solid #09362f;
 	}
 
 			#menubar .menu .options {
 				background: #111;
+				border: 1px solid #567;
 			}
 
 				#menubar .menu .options hr {
-					border-color: #222;
+					border-color: rgb(130, 192, 14);
 				}
 
 				#menubar .menu .options .option {
@@ -623,7 +645,7 @@ select {
 			}
 
 	#sidebar {
-		background-color: #111;
+		/* background-color: #111; */
 	}
 
 		#sidebar .Panel {
@@ -649,7 +671,7 @@ select {
 		}
 
 	#toolbar {
-		background-color: #111;
+		/* background-color: #111; */
 	}
 
 		#toolbar img {
@@ -657,8 +679,8 @@ select {
 		}
 
 	.Outliner {
-		color: #888;
-		background: #222;
+		color: #f8f2f2;
+		background: #0a1517a3;
 	}
 
 		.Outliner .option:hover {
@@ -670,17 +692,18 @@ select {
 		}
 
 	.TabbedPanel .Tabs {
-		background-color: #1b1b1b;
+		background-color: #295e5d69;
 		border-top: 1px solid #222;
+		/* padding: 10px; */
 	}
 
 		.TabbedPanel .Tab {
-			color: #555;
+			color: #f3eeee;
 			border-right: 1px solid #222;
 		}
 
 		.TabbedPanel .Tab.selected {
-			color: #888;
+			color: #16e8e7;
 			background-color: #111;
 		}
 
