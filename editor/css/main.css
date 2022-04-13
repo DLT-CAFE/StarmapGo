@@ -8,23 +8,7 @@ body {
 	margin: 0;
 	overflow: hidden;
 }
-body::-webkit-scrollbar {
-    width: 1em;
-}
- 
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-body {
-scrollbar-color: yellow blue;
-scrollbar-color: #87ceeb #ff5621;
-scrollbar-color: auto;
-}
+
 hr {
 	border: 0;
 	border-top: 1px solid #ccc;
@@ -629,11 +613,10 @@ select {
 
 			#menubar .menu .options {
 				background: #111;
-				border: 1px solid #567;
 			}
 
 				#menubar .menu .options hr {
-					border-color: rgb(130, 192, 14);
+					border-color: #222;
 				}
 
 				#menubar .menu .options .option {
