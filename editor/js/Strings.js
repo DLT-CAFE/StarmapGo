@@ -85,6 +85,8 @@ function Strings( config ) {
 			'sidebar/animations/stop': 'Stop',
 			'sidebar/animations/timescale': 'Time Scale',
 
+			'sidebar/entity': 'Entity',
+
 			'sidebar/scene': 'Scene',
 			'sidebar/scene/background': 'Background',
 			'sidebar/scene/environment': 'Environment',

@@ -43,12 +43,12 @@ function Viewport( editor ) {
 	const grid = new THREE.Group();
 
 	const grid1 = new THREE.GridHelper( 30, 30, 0x888888 );
-	grid1.material.color.setHex( 0x888888 );
+	grid1.material.color.setHex( 0xffffff );
 	grid1.material.vertexColors = false;
 	grid.add( grid1 );
 
 	const grid2 = new THREE.GridHelper( 30, 6, 0x222222 );
-	grid2.material.color.setHex( 0x222222 );
+	grid2.material.color.setHex( 0x765222 );
 	grid2.material.depthFunc = THREE.AlwaysDepth;
 	grid2.material.vertexColors = false;
 	grid.add( grid2 );

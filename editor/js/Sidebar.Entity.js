@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { UIPanel, UIBreak, UIRow, UIColor, UISelect, UIText, UINumber } from './libs/ui.js';
 import { UIOutliner, UITexture } from './libs/ui.three.js';
 
-function SidebarScene( editor ) {
+function SidebarEntity( editor ) {
 
 	const signals = editor.signals;
 	const strings = editor.strings;
@@ -13,7 +13,7 @@ function SidebarScene( editor ) {
 	container.setPaddingTop( '20px' );
 
 	// outliner
-
+/*
 	const nodeStates = new WeakMap();
 
 	function buildOption( object, draggable ) {
@@ -189,7 +189,7 @@ function SidebarScene( editor ) {
 
 		signals.sceneBackgroundChanged.dispatch(
 			backgroundType.getValue(),
-			backgroundColor.getHexValue(ffffff),
+			backgroundColor.getHexValue(),
 			backgroundTexture.getValue(),
 			backgroundEquirectangularTexture.getValue()
 		);
@@ -522,4 +522,4 @@ function SidebarScene( editor ) {
 
 }
 
-export { SidebarScene };
+export { SidebarEntity};

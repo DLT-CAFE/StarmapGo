@@ -19980,7 +19980,7 @@
 			if (_transmissionRenderTarget === null) {
 				_transmissionRenderTarget = new WebGLRenderTarget(1, 1, {
 					generateMipmaps: true,
-					type: utils.convert(HalfFloatType) !== null ? HalfFloatType : UnsignedByteType,
+					type: extensions.has('EXT_color_buffer_half_float') ? HalfFloatType : UnsignedByteType,
 					minFilter: LinearMipmapLinearFilter,
 					samples: isWebGL2 && _antialias === true ? 4 : 0
 				});
@@ -36817,3 +36817,4 @@
 	Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGhyZWUuanMiLCJzb3VyY2VzIjpbXSwic291cmNlc0NvbnRlbnQiOltdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIn0=
