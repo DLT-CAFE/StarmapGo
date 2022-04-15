@@ -14,7 +14,7 @@ function Intro( editor ) {
 	container.setOpacity('50%')
 
 	container.setInnerHTML ('')
-//	container.add( new MenubarFile( editor ) );
+//	container.add( new MenubarFile( editor ) ); 
 //	container.add( new MenubarEdit( editor ) );
 //	container.add( new MenubarAdd( editor ) );
 //	container.add( new MenubarPlay( editor ) );
