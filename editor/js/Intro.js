@@ -1,3 +1,6 @@
+//this module will function as editor/starmapgo.html preloader. Consisting of 2-3 step modal, animated logo
+//sequence, page will have audio. buttons onhover state will trigger audio,  all transitions animations 
+//(button appear, modal sequence, and final transition should be a slow gracefull fade  
 import { UIPanel, UIBreak, UIRow, UIColor, UISelect, UIText, UINumber, } from './libs/ui.js';
 
 
@@ -11,7 +14,7 @@ function Intro( editor ) {
 	container.setOpacity('50%')
 
 	container.setInnerHTML ('')
-	//container.add( new MenubarFile( editor ) );
+//	container.add( new MenubarFile( editor ) );
 //	container.add( new MenubarEdit( editor ) );
 //	container.add( new MenubarAdd( editor ) );
 //	container.add( new MenubarPlay( editor ) );

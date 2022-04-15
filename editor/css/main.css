@@ -734,6 +734,7 @@ select {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  left: 50%;
   height: 100vh;
   max-height: 780px;
   width:25%;
