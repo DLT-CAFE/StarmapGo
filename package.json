@@ -166,5 +166,8 @@
       "build/three.module.js"
     ],
     "directories": {}
+  },
+  "dependencies": {
+    "augmented-ui": "^2.0.0"
   }
 }
