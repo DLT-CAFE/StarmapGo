@@ -55,7 +55,7 @@ function MenubarEdit( editor ) {
 
 		if ( confirm( 'The Undo/Redo History will be cleared. Are you sure?' ) ) {
 
-			editor.history.clear();
+			editor.history.clear(); 
 
 		}
 
