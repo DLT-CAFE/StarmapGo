@@ -14,7 +14,12 @@ function MenubarFile( editor ) {
 
 	const title = new UIPanel();
 	title.setClass( 'title' );
-	title.setTextContent( strings.getKey( 'menubar/file' ) );
+	const logoImage = document.createElement('img');
+	logoImage.title = "File Logo Image";
+	logoImage.src = 'images/file-logo.png';
+	logoImage.style.width = "25px";
+	title.dom.appendChild(logoImage);
+//	title.setTextContent( strings.getKey( 'menubar/file' ) );
 	container.add( title );
 
 	const options = new UIPanel();

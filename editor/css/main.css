@@ -371,6 +371,7 @@ select {
 		float: left;
 		cursor: pointer;
 		padding-right: 8px;
+	
 	}
 
 	#menubar .menu.right {
@@ -385,7 +386,7 @@ select {
 			color: #888;
 			margin: 0;
 			padding: 8px;
-			line-height: 16px;
+			line-height: 40px;
 		}
 
 		#menubar .menu .options {
@@ -763,6 +764,7 @@ select {
   z-index: 10;
 }
 
+
 .center-container {
   position: absolute;
   display: block;
@@ -777,4 +779,18 @@ select {
 .center-container._1 {
   margin-top: -42px;
   background-color: rgba(109, 62, 62, 0.9);
+}
+
+.topNavbar{
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.topNavbar-item{
+}
+
+.topNavbar-date{
+	line-height: 25px;
+	text-align: center;
 }

@@ -1,6 +1,6 @@
 import { Box3, Vector3 } from 'three';
 
-import { UIPanel, UIRow, UIHorizontalRule } from './libs/ui.js';
+import { UIPanel, UIRow, UIHorizontalRule, UIDiv } from './libs/ui.js';
 
 import { AddObjectCommand } from './commands/AddObjectCommand.js';
 import { RemoveObjectCommand } from './commands/RemoveObjectCommand.js';
@@ -9,13 +9,18 @@ import { SetPositionCommand } from './commands/SetPositionCommand.js';
 function MenubarEdit( editor ) {
 
 	const strings = editor.strings;
-
 	const container = new UIPanel();
 	container.setClass( 'menu' );
 
 	const title = new UIPanel();
 	title.setClass( 'title' );
-	title.setTextContent( strings.getKey( 'menubar/edit' ) );
+//	title.setTextContent( strings.getKey( 'menubar/edit' ) );
+
+const logoImage = document.createElement('img');
+logoImage.title = "File Logo Image";
+logoImage.src = 'images/edit-logo.png';
+logoImage.style.width = "25px";
+title.dom.appendChild(logoImage);
 	container.add( title );
 
 	const options = new UIPanel();
@@ -46,174 +51,182 @@ function MenubarEdit( editor ) {
 	} );
 	options.add( redo );
 
+
 	// Clear History
 
-	let option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/edit/clear_history' ) );
-	option.onClick( function () {
+	//#region removing Clear History ,Center , Clone ,Delete and Fix Color Map according to our requirements
+	//mentioned in task 1 I will remove this code on submitting the task.
+	// let option = new UIRow();
+	// option.setClass( 'option' );
+	// option.setTextContent( strings.getKey( 'menubar/edit/clear_history' ) );
+	// option.onClick( function () {
 
-		if ( confirm( 'The Undo/Redo History will be cleared. Are you sure?' ) ) {
+	// 	if ( confirm( 'The Undo/Redo History will be cleared. Are you sure?' ) ) {
 
-			editor.history.clear(); 
+	// 		editor.history.clear(); 
 
-		}
+	// 	}
 
-	} );
-	options.add( option );
+	// } );
+	//options.add( option );
 
 
-	editor.signals.historyChanged.add( function () {
+	// editor.signals.historyChanged.add( function () {
 
-		const history = editor.history;
+	// 	const history = editor.history;
 
-		undo.setClass( 'option' );
-		redo.setClass( 'option' );
+	// 	undo.setClass( 'option' );
+	// 	redo.setClass( 'option' );
 
-		if ( history.undos.length == 0 ) {
+	// 	if ( history.undos.length == 0 ) {
 
-			undo.setClass( 'inactive' );
+	// 		undo.setClass( 'inactive' );
 
-		}
+	// 	}
 
-		if ( history.redos.length == 0 ) {
+	// 	if ( history.redos.length == 0 ) {
 
-			redo.setClass( 'inactive' );
+	// 		redo.setClass( 'inactive' );
 
-		}
+	// 	}
 
-	} );
+	// } );
 
-	// ---
 
-	options.add( new UIHorizontalRule() );
 
-	// Center
+	//options.add( new UIHorizontalRule() );
 
-	option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/edit/center' ) );
-	option.onClick( function () {
 
-		const object = editor.selected;
 
-		if ( object === null || object.parent === null ) return; // avoid centering the camera or scene
+	// option = new UIRow();
+	// option.setClass( 'option' );
+	// option.setTextContent( strings.getKey( 'menubar/edit/center' ) );
+	// option.onClick( function () {
 
-		const aabb = new Box3().setFromObject( object );
-		const center = aabb.getCenter( new Vector3() );
-		const newPosition = new Vector3();
+	// 	const object = editor.selected;
 
-		newPosition.x = object.position.x + ( object.position.x - center.x );
-		newPosition.y = object.position.y + ( object.position.y - center.y );
-		newPosition.z = object.position.z + ( object.position.z - center.z );
+	// 	if ( object === null || object.parent === null ) return; // avoid centering the camera or scene
 
-		editor.execute( new SetPositionCommand( editor, object, newPosition ) );
+	// 	const aabb = new Box3().setFromObject( object );
+	// 	const center = aabb.getCenter( new Vector3() );
+	// 	const newPosition = new Vector3();
 
-	} );
-	options.add( option );
+	// 	newPosition.x = object.position.x + ( object.position.x - center.x );
+	// 	newPosition.y = object.position.y + ( object.position.y - center.y );
+	// 	newPosition.z = object.position.z + ( object.position.z - center.z );
+
+	// 	editor.execute( new SetPositionCommand( editor, object, newPosition ) );
+
+	// } );
+	// options.add( option );
 
 	// Clone
 
-	option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/edit/clone' ) );
-	option.onClick( function () {
+	// option = new UIRow();
+	// option.setClass( 'option' );
+	// option.setTextContent( strings.getKey( 'menubar/edit/clone' ) );
+	// option.onClick( function () {
 
-		let object = editor.selected;
+	// 	let object = editor.selected;
 
-		if ( object === null || object.parent === null ) return; // avoid cloning the camera or scene
+	// 	if ( object === null || object.parent === null ) return; // avoid cloning the camera or scene
 
-		object = object.clone();
+	// 	object = object.clone();
 
-		editor.execute( new AddObjectCommand( editor, object ) );
+	// 	editor.execute( new AddObjectCommand( editor, object ) );
 
-	} );
-	options.add( option );
+	// } );
+	// options.add( option );
 
-	// Delete
+	// // Delete
 
-	option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/edit/delete' ) );
-	option.onClick( function () {
+	// option = new UIRow();
+	// option.setClass( 'option' );
+	// option.setTextContent( strings.getKey( 'menubar/edit/delete' ) );
+	// option.onClick( function () {
 
-		const object = editor.selected;
+	// 	const object = editor.selected;
 
-		if ( object !== null && object.parent !== null ) {
+	// 	if ( object !== null && object.parent !== null ) {
 
-			editor.execute( new RemoveObjectCommand( editor, object ) );
+	// 		editor.execute( new RemoveObjectCommand( editor, object ) );
 
-		}
+	// 	}
 
-	} );
-	options.add( option );
+	// } );
+	// options.add( option );
 
-	//
+	// //
 
-	options.add( new UIHorizontalRule() );
+	// options.add( new UIHorizontalRule() );
 
 	// Set textures to sRGB. See #15903
 
-	option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/edit/fixcolormaps' ) );
-	option.onClick( function () {
+	// option = new UIRow();
+	// option.setClass( 'option' );
+	// option.setTextContent( strings.getKey( 'menubar/edit/fixcolormaps' ) );
+	// option.onClick( function () {
 
-		editor.scene.traverse( fixColorMap );
+	// 	editor.scene.traverse( fixColorMap );
 
-	} );
-	options.add( option );
+	// } );
+	// options.add( option );
 
-	const colorMaps = [ 'map', 'envMap', 'emissiveMap' ];
+	// const colorMaps = [ 'map', 'envMap', 'emissiveMap' ];
 
-	function fixColorMap( obj ) {
+	// function fixColorMap( obj ) {
 
-		const material = obj.material;
+	// 	const material = obj.material;
 
-		if ( material !== undefined ) {
+	// 	if ( material !== undefined ) {
 
-			if ( Array.isArray( material ) === true ) {
+	// 		if ( Array.isArray( material ) === true ) {
 
-				for ( let i = 0; i < material.length; i ++ ) {
+	// 			for ( let i = 0; i < material.length; i ++ ) {
 
-					fixMaterial( material[ i ] );
+	// 			//	fixMaterial( material[ i ] );
 
-				}
+	// 			}
 
-			} else {
+	// 		} else {
 
-				fixMaterial( material );
+	// 			//fixMaterial( material );
 
-			}
+	// 		}
 
-			editor.signals.sceneGraphChanged.dispatch();
+	// 		editor.signals.sceneGraphChanged.dispatch();
 
-		}
+	// 	}
 
-	}
+	// }
 
-	function fixMaterial( material ) {
+	// function fixMaterial( material ) {
 
-		let needsUpdate = material.needsUpdate;
+	// 	let needsUpdate = material.needsUpdate;
 
-		for ( let i = 0; i < colorMaps.length; i ++ ) {
+	// 	for ( let i = 0; i < colorMaps.length; i ++ ) {
 
-			const map = material[ colorMaps[ i ] ];
+	// 		const map = material[ colorMaps[ i ] ];
 
-			if ( map ) {
+	// 		if ( map ) {
 
-				map.encoding = THREE.sRGBEncoding;
-				needsUpdate = true;
+	// 			map.encoding = THREE.sRGBEncoding;
+	// 			needsUpdate = true;
 
-			}
+	// 		}
 
-		}
+	// 	}
 
-		material.needsUpdate = needsUpdate;
+	// 	material.needsUpdate = needsUpdate;
 
-	}
+	// }
+
+	//#endregion
+
+	
 
 	return container;
+	
 
 }
 

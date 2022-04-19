@@ -1,36 +1,40 @@
 import { UIPanel } from './libs/ui.js';
 
-function MenubarPlay( editor ) {
+function MenubarPlay(editor) {
 
 	const signals = editor.signals;
 	const strings = editor.strings;
 
 	const container = new UIPanel();
-	container.setClass( 'menu' );
+	container.setClass('menu');
 
 	let isPlaying = false;
 
 	const title = new UIPanel();
-	title.setClass( 'title' );
-	title.setTextContent( strings.getKey( 'menubar/play' ) );
-	title.onClick( function () {
+	title.setClass('title');
+	const logoImage = document.createElement('img');
+	logoImage.title = "File Logo Image";
+	logoImage.src = 'images/play-icon.png';
+	logoImage.style.width = "25px";
+	title.dom.appendChild(logoImage);
+	title.onClick(function () {
 
-		if ( isPlaying === false ) {
+		if (isPlaying === false) {
 
 			isPlaying = true;
-			title.setTextContent( strings.getKey( 'menubar/play/stop' ) );
+			title.dom.firstChild.src = "images/stop-icon.jpg";
 			signals.startPlayer.dispatch();
 
 		} else {
 
 			isPlaying = false;
-			title.setTextContent( strings.getKey( 'menubar/play/play' ) );
+			title.dom.firstChild.src = "images/play-icon.png";
 			signals.stopPlayer.dispatch();
 
 		}
 
-	} );
-	container.add( title );
+	});
+	container.add(title);
 
 	return container;
 
