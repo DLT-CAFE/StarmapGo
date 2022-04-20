@@ -360,7 +360,8 @@ select {
 	position: absolute;
 	width: 100%;
 	height: 56px;
-	background: #eee;
+
+	background-color: #747473;
 	padding: 0;
 	margin: 0;
 	right: 0;
@@ -368,9 +369,8 @@ select {
 }
 
 	#menubar .menu {
-		float: left;
 		cursor: pointer;
-		padding-right: 8px;
+		padding-right: 10px;
 	
 	}
 
@@ -385,8 +385,7 @@ select {
 			display: inline-block;
 			color: #888;
 			margin: 0;
-			padding: 8px;
-			line-height: 40px;
+
 		}
 
 		#menubar .menu .options {
@@ -735,10 +734,10 @@ select {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  left: 50%;
-  height: 100vh;
-  max-height: 780px;
-  width:25%;
+ 
+  height: 100%;
+
+  width:100%;
   padding-top: 100px;
   padding-bottom: 100px;
   -webkit-box-pack: center;
@@ -749,8 +748,7 @@ select {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
+
   background-position: 0px 0px, 50% 50%;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -762,6 +760,7 @@ select {
   transition: opacity 425ms ease;
   color: #fff;
   z-index: 10;
+  background-color: black;
 }
 
 
@@ -790,7 +789,3 @@ select {
 .topNavbar-item{
 }
 
-.topNavbar-date{
-	line-height: 25px;
-	text-align: center;
-}

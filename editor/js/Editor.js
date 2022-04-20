@@ -84,7 +84,11 @@ function Editor() {
 		refreshSidebarObject3D: new Signal(),
 		historyChanged: new Signal(),
 
-		viewportCameraChanged: new Signal()
+		viewportCameraChanged: new Signal(),
+
+		ShowWidgetInfo:new Signal(),
+
+		initializeStarMapGo:new Signal()
 
 	};
 

@@ -1,0 +1,86 @@
+
+.column {
+    /* float: left; */
+    padding: 10px;
+    }
+    
+    .left, .right {
+    width: 25%;
+  
+    }
+    
+    .middle {
+    width: 50%;
+    display: flex;
+
+    align-items: center;
+  justify-content: center;
+
+    }
+
+    .forward-content{
+        padding-right: 10px;
+    }
+
+    .back-content{
+        padding-right: 10px;
+    }
+
+    .topNavbar-date{
+        line-height: 40px;
+    
+        font-size: 16px;
+        font-weight: bold;
+        color:white;
+        text-align: right;
+    }
+
+    .logo-container{
+      
+    }
+
+
+.popUpMainDiv{
+    width: 30%;
+    background-color: #6b6868;
+    height: auto;
+    color: #f8f8f8;
+    font-size: large;
+    text-align: center;
+    padding: 10px;
+}
+
+.step1-content{
+    text-align: center;
+    padding: 60px 60px 20px 60px;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.step1-startButton{
+    background-color: #0cffc5;
+    color: #131d1a;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.step2-content{
+    text-align: center;
+    padding: 60px 60px 20px 60px;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.step2-startButton{
+    background-color: #0cffc5;
+    color: #131d1a;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}

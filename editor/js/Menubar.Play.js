@@ -15,18 +15,21 @@ function MenubarPlay(editor) {
 	const logoImage = document.createElement('img');
 	logoImage.title = "File Logo Image";
 	logoImage.src = 'images/play-icon.png';
-	logoImage.style.width = "25px";
+	logoImage.style.width = "30px";
 	title.dom.appendChild(logoImage);
 	title.onClick(function () {
 
 		if (isPlaying === false) {
 
+		
+		
 			isPlaying = true;
 			title.dom.firstChild.src = "images/stop-icon.jpg";
 			signals.startPlayer.dispatch();
 
 		} else {
 
+	
 			isPlaying = false;
 			title.dom.firstChild.src = "images/play-icon.png";
 			signals.stopPlayer.dispatch();
