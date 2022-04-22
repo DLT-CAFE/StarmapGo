@@ -7,14 +7,21 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="apple-touch-icon" href="images/icon.png">
 	<link rel="manifest" href="manifest.json">
-	<link rel="shortcut icon" href="../files/favicon_white.ico" media="(prefers-color-scheme: dark)" />
-	<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
-</head>
-
-<body>
 	<link rel="stylesheet" href="css/augmented-ui.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/starmap-go.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="shortcut icon" href="../files/favicon_white.ico" media="(prefers-color-scheme: dark)" />
+	<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
+	<link href="./styles/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
 		integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
@@ -22,6 +29,7 @@
 	<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.9.6/dist/ffmpeg.min.js" defer></script>
 
 	<script src="../examples/js/libs/draco/draco_encoder.js"></script>
+	<script src="./styles/bootstrap/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="js/libs/codemirror/codemirror.css">
 	<link rel="stylesheet" href="js/libs/codemirror/theme/monokai.css">
@@ -78,7 +86,7 @@
 		import { Menubar } from './js/Menubar.js';
 		import { Resizer } from './js/Resizer.js';
 		import { VRButton } from '../examples/jsm/webxr/VRButton.js';
-
+		import { BootstrapModal, UIDiv, UIButton } from './js/libs/ui.js';
 		window.URL = window.URL || window.webkitURL;
 		window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
 
@@ -97,195 +105,271 @@
 		window.VRButton = VRButton; // Expose VRButton to APP Scripts
 		const signals = editor.signals;
 
-		const intro = new Intro( editor );
-		document.body.appendChild( intro.dom );
+		// const intro = new Intro( editor );
+		// document.body.appendChild( intro.dom );
 
 		signals.initializeStarMapGo.add(function () {
 
 			intializeStartMapGoUI();
 
-});
-
-
-		function intializeStartMapGoUI(){
-
-		const viewport = new Viewport(editor);
-		document.body.appendChild(viewport.dom);
-
-		const toolbar = new Toolbar(editor);
-		document.body.appendChild(toolbar.dom);
-
-		const script = new Script(editor);
-		document.body.appendChild(script.dom);
-
-		const player = new Player(editor);
-		document.body.appendChild(player.dom);
-
-		const sidebar = new Sidebar(editor);
-		document.body.appendChild(sidebar.dom);
-
-		const menubar = new Menubar(editor);
-		document.body.appendChild(menubar.dom);
-
-		const resizer = new Resizer(editor);
-		document.body.appendChild(resizer.dom);
-
-		//
+		});
 
 
 
 
 
 
+		let bootstrapConfig = {
+			bootstrapModalPopUpId: "first-PopModal",
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInDown"],
+			modalDailogClassList: [],
+			modalContentClassList: ["step1-content", "p-5", "pb-3"],
 
-		editor.storage.init(function () {
+			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
+			modalBodyContent: "LOGO TYPE LOTTIE ANIMATIONS",
+			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
+			modalFooterButtonClassList: ["step1-startButton"],
+			modalFooterButtonId: "first-popButton",
+			nextPopUpId: "second-PopModal",
+			footerButtonText:"Start"
+		}
 
-			editor.storage.get(function (state) {
+		let bootstrapModal = new BootstrapModal(bootstrapConfig);
+		document.body.appendChild(bootstrapModal['dom'].dom);
+		//bootstrapModal.bootstrapModalButton['dom'].click();
 
-				if (isLoadingFromHash) return;
+			let bootstrapConfig1 = {
+			bootstrapModalPopUpId: "second-PopModal",
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInLeft"],
+			modalDailogClassList: [],
+			modalContentClassList: ["step1-content","p-5","pb-3"],
 
-				if (state !== undefined) {
+			modalBodyClassList: ["display-6","text-light","fw-bold"],
+			modalBodyContent:"Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec",
+			modalFooterClassList: ["border-0","justify-content-center","p-0"],
+			modalFooterButtonClassList: ["step1-startButton"],
+			modalFooterButtonId:"second-popButton",
+			nextPopUpId: "third-PopModal",
+			footerButtonText:"Continue"
+		}
 
-					editor.fromJSON(state);
+		let bootstrapModal1 = new BootstrapModal(bootstrapConfig1);
+		document.body.appendChild(bootstrapModal1['dom'].dom);
+		
+
+			let bootstrapConfig2 = {
+			bootstrapModalPopUpId: "third-PopModal",
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInRight"],
+			modalDailogClassList: [],
+			modalContentClassList: ["step1-content","p-5","pb-3"],
+
+			modalBodyClassList: ["display-6","text-light","fw-bold"],
+			modalBodyContent:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+			modalFooterClassList: ["border-0","justify-content-center","p-0"],
+			modalFooterButtonClassList: ["step1-startButton"],
+			modalFooterButtonId:"third-popButton",
+			footerButtonText:"Continue"
+			
+		}
+
+		let bootstrapModal2 = new BootstrapModal(bootstrapConfig2);
+		document.body.appendChild(bootstrapModal2['dom'].dom);
+
+	
+
+		bootstrapModal2.bootstrapModalButton.onClick(res=>{
+	
+			intializeStartMapGoUI();
+		})
+
+
+		var myModal = new bootstrap.Modal(document.getElementById('first-PopModal'), {
+			keyboard: false
+		})
+
+		myModal.show();
+
+
+
+		function intializeStartMapGoUI() {
+
+			const viewport = new Viewport(editor);
+			document.body.appendChild(viewport.dom);
+
+			const toolbar = new Toolbar(editor);
+			document.body.appendChild(toolbar.dom);
+
+			const script = new Script(editor);
+			document.body.appendChild(script.dom);
+
+			const player = new Player(editor);
+			document.body.appendChild(player.dom);
+
+			const sidebar = new Sidebar(editor);
+			document.body.appendChild(sidebar.dom);
+
+			const menubar = new Menubar(editor);
+			document.body.appendChild(menubar.dom);
+
+			const resizer = new Resizer(editor);
+			document.body.appendChild(resizer.dom);
+
+			//
+
+
+
+
+
+
+
+			editor.storage.init(function () {
+
+				editor.storage.get(function (state) {
+
+					if (isLoadingFromHash) return;
+
+					if (state !== undefined) {
+
+						editor.fromJSON(state);
+
+					}
+
+					const selected = editor.config.getKey('selected');
+
+					if (selected !== undefined) {
+
+						editor.selectByUuid(selected);
+
+					}
+
+				});
+
+				//
+
+				let timeout;
+
+				function saveState() {
+
+					if (editor.config.getKey('autosave') === false) {
+
+						return;
+
+					}
+
+					clearTimeout(timeout);
+
+					timeout = setTimeout(function () {
+
+						editor.signals.savingStarted.dispatch();
+
+						timeout = setTimeout(function () {
+
+							editor.storage.set(editor.toJSON());
+
+							editor.signals.savingFinished.dispatch();
+
+						}, 100);
+
+					}, 1000);
 
 				}
 
-				const selected = editor.config.getKey('selected');
+				const signals = editor.signals;
 
-				if (selected !== undefined) {
-
-					editor.selectByUuid(selected);
-
-				}
+				signals.geometryChanged.add(saveState);
+				signals.objectAdded.add(saveState);
+				signals.objectChanged.add(saveState);
+				signals.objectRemoved.add(saveState);
+				signals.materialChanged.add(saveState);
+				signals.sceneBackgroundChanged.add(saveState);
+				signals.sceneEnvironmentChanged.add(saveState);
+				signals.sceneFogChanged.add(saveState);
+				signals.sceneGraphChanged.add(saveState);
+				signals.scriptChanged.add(saveState);
+				signals.historyChanged.add(saveState);
 
 			});
 
 			//
 
-			let timeout;
+			document.addEventListener('dragover', function (event) {
 
-			function saveState() {
+				event.preventDefault();
+				event.dataTransfer.dropEffect = 'copy';
 
-				if (editor.config.getKey('autosave') === false) {
+			});
 
-					return;
+			document.addEventListener('drop', function (event) {
+
+				event.preventDefault();
+
+				if (event.dataTransfer.types[0] === 'text/plain') return; // Outliner drop
+
+				if (event.dataTransfer.items) {
+
+					// DataTransferItemList supports folders
+
+					editor.loader.loadItemList(event.dataTransfer.items);
+
+				} else {
+
+					editor.loader.loadFiles(event.dataTransfer.files);
 
 				}
 
-				clearTimeout(timeout);
+			});
 
-				timeout = setTimeout(function () {
+			function onWindowResize() {
 
-					editor.signals.savingStarted.dispatch();
-
-					timeout = setTimeout(function () {
-
-						editor.storage.set(editor.toJSON());
-
-						editor.signals.savingFinished.dispatch();
-
-					}, 100);
-
-				}, 1000);
+				editor.signals.windowResize.dispatch();
 
 			}
 
-			const signals = editor.signals;
+			window.addEventListener('resize', onWindowResize);
 
-			signals.geometryChanged.add(saveState);
-			signals.objectAdded.add(saveState);
-			signals.objectChanged.add(saveState);
-			signals.objectRemoved.add(saveState);
-			signals.materialChanged.add(saveState);
-			signals.sceneBackgroundChanged.add(saveState);
-			signals.sceneEnvironmentChanged.add(saveState);
-			signals.sceneFogChanged.add(saveState);
-			signals.sceneGraphChanged.add(saveState);
-			signals.scriptChanged.add(saveState);
-			signals.historyChanged.add(saveState);
+			onWindowResize();
 
-		});
+			//
 
-		//
+			let isLoadingFromHash = false;
+			const hash = window.location.hash;
 
-		document.addEventListener('dragover', function (event) {
+			if (hash.slice(1, 6) === 'file=') {
 
-			event.preventDefault();
-			event.dataTransfer.dropEffect = 'copy';
+				const file = hash.slice(6);
 
-		});
+				if (confirm('Any unsaved data will be lost. Are you sure?')) {
 
-		document.addEventListener('drop', function (event) {
+					const loader = new THREE.FileLoader();
+					loader.crossOrigin = '';
+					loader.load(file, function (text) {
 
-			event.preventDefault();
+						editor.clear();
+						editor.fromJSON(JSON.parse(text));
 
-			if (event.dataTransfer.types[0] === 'text/plain') return; // Outliner drop
+					});
 
-			if (event.dataTransfer.items) {
+					isLoadingFromHash = true;
 
-				// DataTransferItemList supports folders
-
-				editor.loader.loadItemList(event.dataTransfer.items);
-
-			} else {
-
-				editor.loader.loadFiles(event.dataTransfer.files);
+				}
 
 			}
 
-		});
+			// ServiceWorker
 
-		function onWindowResize() {
+			if ('serviceWorker' in navigator) {
 
-			editor.signals.windowResize.dispatch();
+				try {
 
-		}
+					navigator.serviceWorker.register('sw.js');
 
-		window.addEventListener('resize', onWindowResize);
+				} catch (error) {
 
-		onWindowResize();
-
-		//
-
-		let isLoadingFromHash = false;
-		const hash = window.location.hash;
-
-		if (hash.slice(1, 6) === 'file=') {
-
-			const file = hash.slice(6);
-
-			if (confirm('Any unsaved data will be lost. Are you sure?')) {
-
-				const loader = new THREE.FileLoader();
-				loader.crossOrigin = '';
-				loader.load(file, function (text) {
-
-					editor.clear();
-					editor.fromJSON(JSON.parse(text));
-
-				});
-
-				isLoadingFromHash = true;
+				}
 
 			}
 
 		}
-
-		// ServiceWorker
-
-		if ('serviceWorker' in navigator) {
-
-			try {
-
-				navigator.serviceWorker.register('sw.js');
-
-			} catch (error) {
-
-			}
-
-		}
-
-	}
 	</script>
 </body>
 
