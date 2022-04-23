@@ -120,7 +120,7 @@
 
 		let bootstrapConfig = {
 			bootstrapModalPopUpId: "first-PopModal",
-			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInDown"],
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInDown","bg-image"],
 			modalDailogClassList: [],
 			modalContentClassList: ["step1-content", "p-5", "pb-3"],
 
@@ -139,7 +139,7 @@
 
 			let bootstrapConfig1 = {
 			bootstrapModalPopUpId: "second-PopModal",
-			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInLeft"],
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInLeft","bg-image"],
 			modalDailogClassList: [],
 			modalContentClassList: ["step1-content","p-5","pb-3"],
 
@@ -158,7 +158,7 @@
 
 			let bootstrapConfig2 = {
 			bootstrapModalPopUpId: "third-PopModal",
-			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInRight"],
+			modalPopUpClassList: ["multiFormPopUp","animate__animated" ,"animate__backInRight","bg-image"],
 			modalDailogClassList: [],
 			modalContentClassList: ["step1-content","p-5","pb-3"],
 
@@ -195,6 +195,7 @@
 			const viewport = new Viewport(editor);
 			document.body.appendChild(viewport.dom);
 
+			
 			const toolbar = new Toolbar(editor);
 			document.body.appendChild(toolbar.dom);
 

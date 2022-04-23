@@ -15,57 +15,60 @@
 .column {
     /* float: left; */
     padding: 10px;
-    }
-    
-    .left, .right {
+}
+
+.left,
+.right {
     width: 25%;
-  
-    }
-    
-    .middle {
+
+}
+
+.middle {
     width: 50%;
     display: flex;
 
     align-items: center;
-  justify-content: center;
-
-    }
-
-    .forward-content{
-        padding-right: 10px;
-    }
-
-    .back-content{
-        padding-right: 10px;
-    }
-
-    .topNavbar-date{
-        line-height: 40px;
-    
-        font-size: 16px;
-        font-weight: bold;
-        color:white;
-        text-align: right;
-    }
-
-    .logo-container{
-      
-    }
-
-    .multiFormPopUp{
-        background-color: black;
-    }
-
-
-
-.step1-content{
-    background-color: #6b6868 !important;
-    text-align: center;
-     font-weight: bold;
+    justify-content: center;
 
 }
 
-.step1-startButton{
+.forward-content {
+    padding-right: 10px;
+}
+
+.back-content {
+    padding-right: 10px;
+}
+
+.topNavbar-date {
+    line-height: 40px;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+}
+
+.logo-container {}
+
+.multiFormPopUp {
+    background-color: black;
+    background-image: url('./../images/background-image.jpg');
+
+    height: 100vh;
+
+}
+
+
+
+.step1-content {
+    background-color: #6b6868 !important;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.step1-startButton {
     background-color: #0cffc5;
     color: #131d1a;
     border-radius: 5px;
@@ -75,7 +78,7 @@
 }
 
 
-.step2-content{
+.step2-content {
     text-align: center;
     padding: 60px 60px 20px 60px;
     font-size: 30px;
@@ -83,7 +86,7 @@
 
 }
 
-.step2-startButton{
+.step2-startButton {
     background-color: #0cffc5;
     color: #131d1a;
     border-radius: 5px;
@@ -91,5 +94,3 @@
     font-weight: bold;
     font-size: 20px;
 }
-
-
