@@ -17,6 +17,8 @@ import { SetScaleCommand } from './commands/SetScaleCommand.js';
 
 import { RoomEnvironment } from '../../examples/jsm/environments/RoomEnvironment.js';
 
+import {viewPortBackGroundColor,enviromentImage,viewPortBackGroundImage,fogType,fogColor,fogNear,fogFar} from './StarMap-Constant.js';
+
 function Viewport( editor ) {
 
 	const signals = editor.signals;
@@ -35,6 +37,40 @@ function Viewport( editor ) {
 
 	const camera = editor.camera;
 	const scene = editor.scene;
+
+
+
+	//Setting the Scene Hard Coded Background Image.
+	const loader = new THREE.TextureLoader();
+    loader.load(viewPortBackGroundImage , function(texture)
+            {
+             scene.background = texture;  
+			
+            });
+			//#endregion
+
+	//#region Setting Hard Coded Values for FOG
+	scene.fog = new THREE.Fog( fogColor, fogNear, fogFar );
+	//#endregion
+
+	//#region Setting Enviroment Harded Coded for ViewPort.js
+
+
+	const loader1 = new THREE.TextureLoader();
+    loader1.load(enviromentImage , function(texture)
+            {
+            // scene.background = texture; 
+	
+			texture.mapping = THREE.EquirectangularReflectionMapping;
+			 scene.environment = texture;
+			    });
+
+
+	//#endregion
+
+	//setting the Scene Hard code background Color.
+	scene.background = new THREE.Color( viewPortBackGroundColor );
+
 	const sceneHelpers = editor.sceneHelpers;
 	let showSceneHelpers = true;
 
@@ -502,6 +538,7 @@ function Viewport( editor ) {
 
 	signals.sceneBackgroundChanged.add( function ( backgroundType, backgroundColor, backgroundTexture, backgroundEquirectangularTexture ) {
 
+		console.log("BACKGROUND COLOR IS CHANGED NOW");
 		switch ( backgroundType ) {
 
 			case 'None':
@@ -547,6 +584,7 @@ function Viewport( editor ) {
 
 	signals.sceneEnvironmentChanged.add( function ( environmentType, environmentEquirectangularTexture ) {
 
+		console.log("I have changed my enviroment as well");
 		switch ( environmentType ) {
 
 			case 'None':

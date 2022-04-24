@@ -263,8 +263,9 @@
 						editor.signals.savingStarted.dispatch();
 
 						timeout = setTimeout(function () {
-
-							editor.storage.set(editor.toJSON());
+							let editorJson = JSON.parse(JSON.stringify(editor.toJSON()));
+							delete editorJson.scene;
+							editor.storage.set(editorJson);
 
 							editor.signals.savingFinished.dispatch();
 

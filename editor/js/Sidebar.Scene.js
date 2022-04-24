@@ -183,13 +183,13 @@ function SidebarScene( editor ) {
 	backgroundEquirectangularTexture.setDisplay( 'none' );
 	backgroundRow.add( backgroundEquirectangularTexture );
 
-	container.add( backgroundRow );
+	//container.add( backgroundRow );
 
 	function onBackgroundChanged() {
 
 		signals.sceneBackgroundChanged.dispatch(
 			backgroundType.getValue(),
-			backgroundColor.getHexValue(ffffff),
+			0xff0000,
 			backgroundTexture.getValue(),
 			backgroundEquirectangularTexture.getValue()
 		);
@@ -201,9 +201,9 @@ function SidebarScene( editor ) {
 		const type = backgroundType.getValue();
 
 		backgroundType.setWidth( type === 'None' ? '150px' : '110px' );
-		backgroundColor.setDisplay( type === 'Color' ? '' : 'none' );
-		backgroundTexture.setDisplay( type === 'Texture' ? '' : 'none' );
-		backgroundEquirectangularTexture.setDisplay( type === 'Equirectangular' ? '' : 'none' );
+	//	backgroundColor.setDisplay( type === 'Color' ? '' : 'none' );
+	//	backgroundTexture.setDisplay( type === 'Texture' ? '' : 'none' );
+	//	backgroundEquirectangularTexture.setDisplay( type === 'Equirectangular' ? '' : 'none' );
 
 	}
 
@@ -233,10 +233,11 @@ function SidebarScene( editor ) {
 	environmentEquirectangularTexture.setDisplay( 'none' );
 	environmentRow.add( environmentEquirectangularTexture );
 
-	container.add( environmentRow );
+	//container.add( environmentRow );
 
 	function onEnvironmentChanged() {
 
+		console.log("Scene Environment is changed now");
 		signals.sceneEnvironmentChanged.dispatch(
 			environmentType.getValue(),
 			environmentEquirectangularTexture.getValue()
@@ -297,14 +298,14 @@ function SidebarScene( editor ) {
 	fogTypeRow.add( new UIText( strings.getKey( 'sidebar/scene/fog' ) ).setWidth( '90px' ) );
 	fogTypeRow.add( fogType );
 
-	container.add( fogTypeRow );
+	//container.add( fogTypeRow );
 
 	// fog color
 
 	const fogPropertiesRow = new UIRow();
 	fogPropertiesRow.setDisplay( 'none' );
 	fogPropertiesRow.setMarginLeft( '90px' );
-	container.add( fogPropertiesRow );
+	//container.add( fogPropertiesRow );
 
 	const fogColor = new UIColor().setValue( '#aaaaaa' );
 	fogColor.onInput( onFogSettingsChanged );
