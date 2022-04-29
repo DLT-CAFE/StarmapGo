@@ -15,6 +15,7 @@ import { SetPositionCommand } from './commands/SetPositionCommand.js';
 import { SetRotationCommand } from './commands/SetRotationCommand.js';
 import { SetScaleCommand } from './commands/SetScaleCommand.js';
 
+
 import { RoomEnvironment } from '../../examples/jsm/environments/RoomEnvironment.js';
 
 import {viewPortBackGroundColor,enviromentImage,viewPortBackGroundImage,fogType,fogColor,fogNear,fogFar} from './StarMap-Constant.js';
@@ -37,39 +38,34 @@ function Viewport( editor ) {
 
 	const camera = editor.camera;
 	const scene = editor.scene;
-
-
-
-	//Setting the Scene Hard Coded Background Image.
-	const loader = new THREE.TextureLoader();
-    loader.load(viewPortBackGroundImage , function(texture)
-            {
-             scene.background = texture;  
-			
-            });
-			//#endregion
-
 	//#region Setting Hard Coded Values for FOG
 	scene.fog = new THREE.Fog( fogColor, fogNear, fogFar );
 	//#endregion
 
-	//#region Setting Enviroment Harded Coded for ViewPort.js
-
-
-	const loader1 = new THREE.TextureLoader();
-    loader1.load(enviromentImage , function(texture)
-            {
-            // scene.background = texture; 
-	
-			texture.mapping = THREE.EquirectangularReflectionMapping;
-			 scene.environment = texture;
-			    });
-
-
+	//#region creating skybox for background image
+	const loader = new THREE.CubeTextureLoader();
+	const texture = loader.load([
+	  './images/viewport/viewportskymapBK.png',
+	  './images/viewport/viewportskymapDN.png',
+	  './images/viewport/viewportskymapFT.png',
+	  './images/viewport/viewportskymapLF.png',
+	  './images/viewport/viewportskymapRT.png',
+	  './images/viewport/viewportskymapUP.png',
+	]);
+	scene.background = texture;
 	//#endregion
-
-	//setting the Scene Hard code background Color.
-	scene.background = new THREE.Color( viewPortBackGroundColor );
+	
+	//#region Setting Enviroment Harded Coded for ViewPort.js
+	//May required this in future. 
+	// const loader1 = new THREE.TextureLoader();
+    // loader1.load(enviromentImage , function(texture)
+    //         {
+    //        
+	
+	// 		texture.mapping = THREE.EquirectangularReflectionMapping;
+	// 		 scene.environment = texture;
+	// 		    });
+	//#endregion
 
 	const sceneHelpers = editor.sceneHelpers;
 	let showSceneHelpers = true;

@@ -16,7 +16,7 @@ function Sidebar( editor ) {
 	container.setId( 'sidebar' );
 
 	const scene = new UISpan().add(
-		//new SidebarScene( editor ), SideBar Scene is not required any more according to the new requirements will remove this after discussing.
+		new SidebarScene( editor ),
 		new SidebarProperties( editor ),
 		new SidebarAnimation( editor ),
 		new SidebarScript( editor )
