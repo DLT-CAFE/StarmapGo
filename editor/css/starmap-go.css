@@ -99,3 +99,95 @@
 .Outliner .option {
  color:black !important;
 }
+
+
+.toggleButton1{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    margin-right: -28px;
+ height: 50px;
+ width: 50px;
+    transition: .3s;
+ 
+}
+
+.btn1{
+    width: 40px;
+    height: 40px;
+    background: #393c7f!important;
+    border-color: #393c7f!important;
+    border-radius: 50% !important;
+}
+
+
+
+.sidebarTitleSection{
+  
+   
+    color: black;
+    font-size: 20px;
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 2px;
+}
+
+#sidebarTitle{
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #ceddb9;
+}
+
+.titleDescription{
+  display: block !important;
+  font-size: 17px;
+}
+
+
+
+.sideBarMainShow{
+    position: relative;
+	left: 9px;
+	top: 71px;
+	bottom: 0;
+
+    transition: all 2s;
+    min-width: 367px;
+    max-width: 367px;
+	background: #031f2194;
+	overflow: none;
+	height: 100%;
+	border: 1px solid #09362f;
+}
+
+.sideBarMainHide{
+    position: relative;
+	left: 9px;
+	top: 71px;
+	bottom: 0;
+    transition: all 2s;
+    min-width: 367px;
+    max-width: 367px;
+	background: #031f2194;
+	overflow: none;
+	height: 100%;
+	border: 1px solid #09362f;
+    margin-left: -376px !important;
+}
+
+.sideBarMainHide > .toggleButton1{
+margin-right: -60px !important;
+}
+
+.tabsSetting{
+    height: 314px !important;
+    overflow-y:auto;
+}
+
+.bottomSection{
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #ceddb9;
+}
+

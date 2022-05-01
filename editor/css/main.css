@@ -431,16 +431,16 @@ select {
 		}
 
 #sidebar {
-	position: absolute;
+	position: relative;
 	left: 9px;
 	top: 71px;
 	bottom: 0;
-	width: 367px;
-	padding: 10px;
+
+    min-width: 367px;
+    max-width: 367px;
 	background: #031f2194;
-	overflow: auto;
+	overflow: none;
 	height: 82vh;
-	border-radius: 14px;
 	border: 1px solid #09362f;
 }
 

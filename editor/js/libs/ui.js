@@ -138,7 +138,7 @@ class UIElement {
 
 	}
 
-	setAttributeOfElement(name,value){
+	setAttributeOfElement(name, value) {
 		this.dom.setAttribute(name, value);
 	}
 
@@ -1107,10 +1107,11 @@ class UITabbedPanel extends UIDiv {
 
 	}
 
-	addTab(id, label, items) {
+	addTab(id, label, items, className = null) {
 
 		const tab = new UITab(label, this);
 		tab.setId(id);
+
 		this.tabs.push(tab);
 		this.tabsDiv.add(tab);
 
@@ -1119,6 +1120,9 @@ class UITabbedPanel extends UIDiv {
 		panel.add(items);
 		panel.setDisplay('none');
 		this.panels.push(panel);
+		if (className) {
+			this.panelsDiv.addClass(className);
+		}
 		this.panelsDiv.add(panel);
 
 		this.select(id);
@@ -1294,7 +1298,7 @@ class BootstrapModal extends UIElement {
 	// modalBodyClassList: [],
 	// modalFooterClassList: [],
 	// modalFooterButtonId:"first"
-	
+
 	constructor(modalConfig) {
 		super();
 		this.bootstrapModalButton = ""
@@ -1304,19 +1308,19 @@ class BootstrapModal extends UIElement {
 		modalMainDiv.addClass("fade");
 
 
-		if(modalConfig.modalPopUpClassList?.length>0){
-			modalConfig.modalPopUpClassList.forEach(res=>{
-				modalMainDiv.addClass(res);	
+		if (modalConfig.modalPopUpClassList?.length > 0) {
+			modalConfig.modalPopUpClassList.forEach(res => {
+				modalMainDiv.addClass(res);
 			})
 		}
 		modalMainDiv.setId(modalConfig.bootstrapModalPopUpId);
 		// modalMainDiv.setAttributeOfElement("aria-hidden","true");
 		// modalMainDiv.setAttributeOfElement("aria-labelledby","exampleModalToggleLabel");
 		// modalMainDiv.setAttributeOfElement("tabindex","-1");
-		modalMainDiv.setAttributeOfElement("data-bs-backdrop","static");
-		modalMainDiv.setAttributeOfElement("data-bs-keyboard","false");
+		modalMainDiv.setAttributeOfElement("data-bs-backdrop", "static");
+		modalMainDiv.setAttributeOfElement("data-bs-keyboard", "false");
 
-	
+
 		this.dom = modalMainDiv;
 		//super(parent);
 		//#region 
@@ -1325,9 +1329,9 @@ class BootstrapModal extends UIElement {
 		let modalDailogue = new UIDiv();
 		modalDailogue.addClass("modal-dialog");
 		modalDailogue.addClass("modal-dialog-centered");
-		if(modalConfig.modalDailogue?.length>0){
-			modalConfig.modalDailogue.forEach(res=>{
-				modalDailogue.addClass(res);	
+		if (modalConfig.modalDailogue?.length > 0) {
+			modalConfig.modalDailogue.forEach(res => {
+				modalDailogue.addClass(res);
 			})
 		}
 		//modalMainDiv.add(modalDailogue);
@@ -1336,10 +1340,10 @@ class BootstrapModal extends UIElement {
 		//#region Modal Content Section
 		let modalContent = new UIDiv();
 		modalContent.addClass("modal-content");
-	
-		if(modalConfig.modalContentClassList?.length>0){
-			modalConfig.modalContentClassList.forEach(res=>{
-				modalContent.addClass(res);	
+
+		if (modalConfig.modalContentClassList?.length > 0) {
+			modalConfig.modalContentClassList.forEach(res => {
+				modalContent.addClass(res);
 			})
 		}
 		modalDailogue.add(modalContent);
@@ -1349,9 +1353,9 @@ class BootstrapModal extends UIElement {
 		//#region Modal Content Section
 		let modalBody = new UIDiv();
 		modalBody.addClass("modal-body");
-		if(modalConfig.modalBodyClassList?.length>0){
-			modalConfig.modalBodyClassList.forEach(res=>{
-				modalBody.addClass(res);	
+		if (modalConfig.modalBodyClassList?.length > 0) {
+			modalConfig.modalBodyClassList.forEach(res => {
+				modalBody.addClass(res);
 			})
 		}
 		modalBody.setTextContent(modalConfig.modalBodyContent);
@@ -1362,25 +1366,25 @@ class BootstrapModal extends UIElement {
 		//#region Modal Content Section
 		let modalFooter = new UIDiv();
 		modalFooter.addClass("modal-footer");
-		if(modalConfig.modalFooterClassList?.length>0){
-			modalConfig.modalFooterClassList.forEach(res=>{
-				modalFooter.addClass(res);	
+		if (modalConfig.modalFooterClassList?.length > 0) {
+			modalConfig.modalFooterClassList.forEach(res => {
+				modalFooter.addClass(res);
 			})
 		}
 		let button = new UIButton();
-		if(modalConfig.nextPopUpId?.length>0){
-		button.setAttributeOfElement("href",`#${modalConfig.nextPopUpId}`);
-		button.setAttributeOfElement("data-bs-toggle","modal");
-		}else{
-		button.setAttributeOfElement("data-bs-toggle","modal");
-		button.setAttributeOfElement("href",`#${modalConfig.bootstrapModalPopUpId}`);
+		if (modalConfig.nextPopUpId?.length > 0) {
+			button.setAttributeOfElement("href", `#${modalConfig.nextPopUpId}`);
+			button.setAttributeOfElement("data-bs-toggle", "modal");
+		} else {
+			button.setAttributeOfElement("data-bs-toggle", "modal");
+			button.setAttributeOfElement("href", `#${modalConfig.bootstrapModalPopUpId}`);
 		}
 		button.setId(modalConfig.modalFooterButtonId);
 		button.setTextContent("Start");
 
-		if(modalConfig.modalFooterButtonClassList?.length>0){
-			modalConfig.modalFooterButtonClassList.forEach(res=>{
-				button.addClass(res);	
+		if (modalConfig.modalFooterButtonClassList?.length > 0) {
+			modalConfig.modalFooterButtonClassList.forEach(res => {
+				button.addClass(res);
 			})
 		}
 
@@ -1389,7 +1393,7 @@ class BootstrapModal extends UIElement {
 		modalContent.add(modalFooter);
 		//#endregion 
 
-	
+
 
 		this.dom.add(modalDailogue);
 
@@ -1398,4 +1402,12 @@ class BootstrapModal extends UIElement {
 
 }
 
-export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIProgress, UITabbedPanel, UIListbox, ListboxItem,BootstrapModal };
+class UIIcon extends UIElement {
+	constructor() {
+
+		super(document.createElement('i'));
+
+	}
+}
+
+export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIProgress, UITabbedPanel, UIListbox, ListboxItem, BootstrapModal, UIIcon };
