@@ -22,15 +22,10 @@ function Player( editor ) {
 	} );
 
 	signals.windowResize.add( function () {
-
 		player.setSize( container.dom.clientWidth, container.dom.clientHeight );
-
 	} );
 
 	signals.startPlayer.add( function () {
-
-
-
 		let scene = editor.scene;
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load([
@@ -42,22 +37,29 @@ function Player( editor ) {
 		  './images/viewport/image6.jpg',
 		]);
 		scene.background = texture;
-		
-	//	player.setScene(scene);
-	//	player.setSize( container.dom.clientWidth, container.dom.clientHeight );
-	
-	//	player.play();
 
+		setTimeout(()=>{
+			signals.sceneGraphChanged.dispatch();
+		},100);
 	} );
 
 	signals.stopPlayer.add( function () {
+		let scene = editor.scene;
+		const loader = new THREE.CubeTextureLoader();
+		const texture = loader.load([
+			'./images/viewport/viewportskymapBK.png',
+		'./images/viewport/viewportskymapDN.png',
+		'./images/viewport/viewportskymapFT.png',
+		'./images/viewport/viewportskymapLF.png',
+		'./images/viewport/viewportskymapRT.png',
+		'./images/viewport/viewportskymapUP.png',
+		]);
 
-		container.setDisplay( 'none' );
-
-	//	player.stop();
-		player.dispose();
-
-
+		scene.background = texture;
+	
+		setTimeout(()=>{
+			signals.sceneGraphChanged.dispatch();
+		},100)
 	} );
 
 	return container;

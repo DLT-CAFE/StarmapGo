@@ -135,7 +135,7 @@
 
 #sidebarTitle{
     padding: 5px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     background-color: #ceddb9;
 }
 
@@ -149,7 +149,7 @@
 .sideBarMainShow{
     position: relative;
 	left: 9px;
-	top: 71px;
+	top: 60px;
 	bottom: 0;
 
     transition: all 2s;
@@ -181,7 +181,7 @@ margin-right: -60px !important;
 }
 
 .tabsSetting{
-    height: 314px !important;
+    height: 300px !important;
     overflow-y:auto;
 }
 
