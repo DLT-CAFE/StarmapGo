@@ -405,7 +405,7 @@ function Viewport(editor) {
 			renderer.dispose();
 			pmremGenerator.dispose();
 
-			container.dom.removeChild(renderer.domElement);
+			//container.dom.removeChild(renderer.domElement);
 
 		}
 
