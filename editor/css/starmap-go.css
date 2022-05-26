@@ -191,3 +191,10 @@ margin-right: -60px !important;
     background-color: #ceddb9;
 }
 
+
+.whiteBackground{
+    background-color: white;
+    display: inline;
+    margin: 4px;
+    border: 2px solid black;
+}

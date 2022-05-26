@@ -39,7 +39,7 @@ function Player( editor ) {
 		scene.background = texture;
 
 		setTimeout(()=>{
-			signals.sceneGraphChanged.dispatch();
+			signals.sceneGraphChanged.dispatch(false);
 		},100);
 	} );
 
@@ -58,7 +58,7 @@ function Player( editor ) {
 		scene.background = texture;
 	
 		setTimeout(()=>{
-			signals.sceneGraphChanged.dispatch();
+			signals.sceneGraphChanged.dispatch(true);
 		},100)
 	} );
 

@@ -7,6 +7,7 @@ import { SidebarAnimation } from './Sidebar.Animation.js';
 import { SidebarProject } from './Sidebar.Project.js';
 import { SidebarSettings } from './Sidebar.Settings.js';
 import { SidebarEntity } from './Sidebar.Entity.js';
+import {AddModalShape} from './../starmapgo/AddModalShape.js';
 
 function Sidebar(editor) {
 	const signals = editor.signals;
@@ -67,17 +68,19 @@ function Sidebar(editor) {
 	const project = new SidebarProject(editor);
 	const settings = new SidebarSettings(editor);
 
+	const addShape = new AddModalShape(editor);
+
 	container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
 	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
 	container.addTab('settings', strings.getKey('sidebar/settings'), settings,"tabsSetting");
+	container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");
 
 
-	
 	
 	container.select('scene');
 
-	
+
 
 
 	let sideBarBottom = new UIDiv();

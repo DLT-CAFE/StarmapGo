@@ -14,6 +14,8 @@ function SidebarProperties( editor ) {
 	container.addTab( 'object', strings.getKey( 'sidebar/properties/object' ), new SidebarObject( editor ) );
 	container.addTab( 'geometry', strings.getKey( 'sidebar/properties/geometry' ), new SidebarGeometry( editor ) );
 	container.addTab( 'material', strings.getKey( 'sidebar/properties/material' ), new SidebarMaterial( editor ) );
+
+	container.addTab( 'addModal', strings.getKey( 'sidebar/properties/addShape' ), new SidebarMaterial( editor ) );
 	container.select( 'object' );
 
 	return container;

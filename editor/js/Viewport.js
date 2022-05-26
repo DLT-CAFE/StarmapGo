@@ -443,9 +443,9 @@ function Viewport(editor) {
 
 	});
 
-	signals.sceneGraphChanged.add(function () {
+	signals.sceneGraphChanged.add(function (showGrid) {
 
-		debugger;
+		grid.visible = showGrid;
 		render();
 
 	});
