@@ -71,26 +71,26 @@ title.dom.appendChild(logoImage);
 	//options.add( option );
 
 
-	// editor.signals.historyChanged.add( function () {
+	editor.signals.historyChanged.add( function () {
 
-	// 	const history = editor.history;
+		const history = editor.history;
 
-	// 	undo.setClass( 'option' );
-	// 	redo.setClass( 'option' );
+		undo.setClass( 'option' );
+		redo.setClass( 'option' );
 
-	// 	if ( history.undos.length == 0 ) {
+		if ( history.undos.length == 0 ) {
 
-	// 		undo.setClass( 'inactive' );
+			undo.setClass( 'inactive' );
 
-	// 	}
+		}
 
-	// 	if ( history.redos.length == 0 ) {
+		if ( history.redos.length == 0 ) {
 
-	// 		redo.setClass( 'inactive' );
+			redo.setClass( 'inactive' );
 
-	// 	}
+		}
 
-	// } );
+	} );
 
 
 

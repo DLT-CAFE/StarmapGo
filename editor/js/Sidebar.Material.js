@@ -23,7 +23,7 @@ function SidebarMaterial( editor ) {
 
 	const container = new UIPanel();
 	container.setBorderTop( '0' );
-	container.setDisplay( 'none' );
+	//container.setDisplay( 'none' );
 	container.setPaddingTop( '20px' );
 
 	// Current material slot

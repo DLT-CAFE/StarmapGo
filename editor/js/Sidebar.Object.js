@@ -19,7 +19,7 @@ function SidebarObject( editor ) {
 	const container = new UIPanel();
 	container.setBorderTop( '0' );
 	container.setPaddingTop( '20px' );
-	container.setDisplay( 'none' );
+	//container.setDisplay( 'none' );
 
 	// Actions
 

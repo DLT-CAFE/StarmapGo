@@ -74,7 +74,7 @@ function Sidebar(editor) {
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
 	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
 	container.addTab('settings', strings.getKey('sidebar/settings'), settings,"tabsSetting");
-	container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");
+	// container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");
 
 
 	

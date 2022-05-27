@@ -429,6 +429,9 @@
 				intializeStartMapGoUI();
 			})
 			let length = menubar.dom.children.length;
+			menubar.dom.children[1].style.display="none";
+
+
 			menubar.dom.children[length - 1].appendChild(createSubmit);
 			document.body.appendChild(menubar.dom);
 			scene = new THREE.Scene();

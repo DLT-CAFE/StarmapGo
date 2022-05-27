@@ -198,3 +198,8 @@ margin-right: -60px !important;
     margin: 4px;
     border: 2px solid black;
 }
+
+.whiteBackground > .Button {
+width: 150px !important;
+margin-bottom: 4px !important;
+}

@@ -95,7 +95,7 @@ function Strings( config ) {
 			'sidebar/properties/object': 'Object',
 			'sidebar/properties/geometry': 'Geometry',
 			'sidebar/properties/material': 'Material',
-			'sidebar/properties/addShape':'Add Shape',
+			'sidebar/properties/addShape':'Create',
 			'sidebar/properties/script': 'Script',
 
 			'sidebar/object/type': 'Type',

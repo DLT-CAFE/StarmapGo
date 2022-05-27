@@ -50,12 +50,22 @@ function Menubar(editor) {
 	const forwardImage = new UIDiv();
 	forwardImage.addClass("forward-image");
 	const forwardlogoImage = document.createElement('img');
-	forwardlogoImage.title = "Logo Image";
+	forwardlogoImage.title = "Undo";
 	forwardlogoImage.src = 'images/backward.png';
 	forwardlogoImage.style.width = "30px";
 	forwardImage.dom.appendChild(forwardlogoImage);
 	forwardMainDiv.add(forwardImage);
+
+	forwardMainDiv.onClick( function () {
+		editor.undo();
+
+	});
+
 	menuOption.add(forwardMainDiv);
+
+
+
+
 
 
 
@@ -68,11 +78,16 @@ function Menubar(editor) {
 	const BackImage = new UIDiv();
 	BackImage.addClass("backward-image");
 	const BacklogoImage = document.createElement('img');
-	BacklogoImage.title = "Logo Image";
+	BacklogoImage.title = "Redo";
 	BacklogoImage.src = 'images/forward.png';
 	BacklogoImage.style.width = "30px";
 	BackImage.dom.appendChild(BacklogoImage);
 	BackMainDiv.add(BackImage);
+
+	BackMainDiv.onClick( function () {
+		editor.redo();
+
+	});
 	menuOption.add(BackMainDiv);
 	//container.add( new MenubarExamples( editor ) );
 	//container.add( new MenubarView( editor ) );
