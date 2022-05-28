@@ -17,7 +17,7 @@ function SidebarProperties( editor ) {
 	container.addTab( 'material', strings.getKey( 'sidebar/properties/material' ), new SidebarMaterial( editor ) );
 
 	container.addTab( 'addModal', strings.getKey( 'sidebar/properties/addShape' ), new AddModalShape( editor ) );
-	container.select( 'object' );
+	container.select( 'addModal' );
 
 	return container;
 

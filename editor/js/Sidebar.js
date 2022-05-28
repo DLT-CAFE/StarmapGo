@@ -31,6 +31,13 @@ function Sidebar(editor) {
 
 
 	const sideMain = new UIDiv();
+
+	//Copy this line and add it to the place where we need to add data-augmented-ui.
+	//(nameOfDiv).setAttributeOfElement("data-augmented-ui", "tl-clip br-clip both") which is sideMain for this case.
+	//sideMain.setAttributeOfElement("data-augmented-ui", "tl-clip br-clip both");
+	//#endregion
+
+
 	sideMain.add(toggleSec);
 	sideMain.setId("sidebar1");
 	sideMain.addClass("sideBarMainShow");

@@ -203,3 +203,13 @@ margin-right: -60px !important;
 width: 150px !important;
 margin-bottom: 4px !important;
 }
+
+
+.my-augborder {
+    --aug-border-bg: linear-gradient(to bottom right, teal, rebeccapurple);
+    --aug-tl: 40px;
+    --aug-tr: 30px;
+    --aug-br: 20px;
+    --aug-br-extend1: 25%;
+    --aug-br-extend2: 50%;
+  }

@@ -14,6 +14,8 @@
 	<link rel="shortcut icon" href="../files/favicon_white.ico" media="(prefers-color-scheme: dark)" />
 	<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
 	<link href="./styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css" />
 </head>
 
 <body>
@@ -126,8 +128,9 @@
 		let bootstrapConfig = {
 			bootstrapModalPopUpId: "first-PopModal",
 			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInDown", "bg-image"],
+			augmentedUiClass:"tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "LOGO TYPE LOTTIE ANIMATIONS",
@@ -146,9 +149,10 @@
 		//#region Second Bootstrap Modal Regio
 		let bootstrapConfig1 = {
 			bootstrapModalPopUpId: "second-PopModal",
+			augmentedUiClass:"tl-clip br-clip both",
 			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInLeft", "bg-image"],
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec",
@@ -167,8 +171,9 @@
 		let bootstrapConfig2 = {
 			bootstrapModalPopUpId: "third-PopModal",
 			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInRight", "bg-image"],
+			augmentedUiClass:"tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
@@ -222,6 +227,8 @@
 
 			const menubar = new Menubar(editor);
 			let createSubmit = document.createElement("button");
+			createSubmit.classList.add("btn");
+			createSubmit.classList.add("btn-primary");
 			createSubmit.innerText = "Back";
 			createSubmit.addEventListener('click', () => {
 				let list = document.getElementsByTagName("body")[0];
@@ -417,6 +424,8 @@
 			const menubar = new Menubar(editor);
 
 			let createSubmit = document.createElement("button");
+			createSubmit.classList.add("btn");
+			createSubmit.classList.add("btn-primary");
 			createSubmit.innerText = "Builder";
 			createSubmit.addEventListener('click', () => {
 				let list = document.getElementsByTagName("body")[0];
@@ -430,7 +439,8 @@
 			})
 			let length = menubar.dom.children.length;
 			menubar.dom.children[1].style.display="none";
-
+		
+			menubar.dom.children[2].innerText = "";
 
 			menubar.dom.children[length - 1].appendChild(createSubmit);
 			document.body.appendChild(menubar.dom);

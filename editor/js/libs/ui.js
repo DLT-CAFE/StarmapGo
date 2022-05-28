@@ -142,6 +142,9 @@ class UIElement {
 		this.dom.setAttribute(name, value);
 	}
 
+
+
+
 }
 
 // properties
@@ -1306,6 +1309,8 @@ class BootstrapModal extends UIElement {
 		let modalMainDiv = new UIDiv();
 		modalMainDiv.addClass("modal");
 		modalMainDiv.addClass("fade");
+	
+
 
 
 		if (modalConfig.modalPopUpClassList?.length > 0) {
@@ -1340,7 +1345,7 @@ class BootstrapModal extends UIElement {
 		//#region Modal Content Section
 		let modalContent = new UIDiv();
 		modalContent.addClass("modal-content");
-
+		modalContent.setAttributeOfElement("data-augmented-ui", modalConfig.augmentedUiClass)
 		if (modalConfig.modalContentClassList?.length > 0) {
 			modalConfig.modalContentClassList.forEach(res => {
 				modalContent.addClass(res);
