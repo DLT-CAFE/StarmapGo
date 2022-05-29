@@ -2,14 +2,15 @@
 	color-scheme: light dark;
 }
 @font-face {
-	font-family: myFirstFont;
+	font-family: Oxanium;
 	src: url(Oxanium-VariableFont_wght.ttf);
   }
 
 
 .modal-body{
-	font-size: 28px !important;
+	font-size: 18px !important;
 	font-weight: 400 !important;
+
 
 }
 
