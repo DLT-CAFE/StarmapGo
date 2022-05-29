@@ -1,9 +1,20 @@
 :root {
 	color-scheme: light dark;
 }
+@font-face {
+	font-family: myFirstFont;
+	src: url(Oxanium-VariableFont_wght.ttf);
+  }
+
+
+.modal-body{
+	font-size: 28px !important;
+	font-weight: 400 !important;
+
+}
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Oxanium, Arial, sans-serif !important; 
 	font-size: 12px;
 	margin: 0;
 	overflow: hidden;
