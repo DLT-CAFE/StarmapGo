@@ -1309,6 +1309,12 @@ class BootstrapModal extends UIElement {
 		let modalMainDiv = new UIDiv();
 		modalMainDiv.addClass("modal");
 		modalMainDiv.addClass("fade");
+
+		//#region 
+
+
+
+		//#endregion
 	
 
 

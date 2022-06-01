@@ -15,7 +15,7 @@
 	<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
 	<link href="./styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	
+
 </head>
 
 <body>
@@ -128,9 +128,9 @@
 		let bootstrapConfig = {
 			bootstrapModalPopUpId: "first-PopModal",
 			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInDown", "bg-image"],
-			augmentedUiClass:"tl-clip br-clip both",
+			augmentedUiClass: "tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "LOGO TYPE LOTTIE ANIMATIONS",
@@ -149,10 +149,10 @@
 		//#region Second Bootstrap Modal Regio
 		let bootstrapConfig1 = {
 			bootstrapModalPopUpId: "second-PopModal",
-			augmentedUiClass:"tl-clip br-clip both",
+			augmentedUiClass: "tl-clip br-clip both",
 			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInLeft", "bg-image"],
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec",
@@ -164,16 +164,32 @@
 		}
 
 		let bootstrapModal1 = new BootstrapModal(bootstrapConfig1);
+		bootstrapModal1.bootstrapModalButton.onClick(res => {
+
+			let video = document.createElement("video");
+			video.setAttribute("id", "bgVideo");
+			video.setAttribute("loop", true);
+			video.src = "images/video/space.mp4";
+			video.autoplay = true;
+
+			video.controls = true;
+			video.muted = false;
+			video.classList.add("modal2-video");
+			document.body.appendChild(video);
+
+		});
 		document.body.appendChild(bootstrapModal1['dom'].dom);
 		//#endregion
 
 		//#region Third Bootstrap Modal Region
 		let bootstrapConfig2 = {
+
+			addVideo: true,
 			bootstrapModalPopUpId: "third-PopModal",
-			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInRight", "bg-image"],
-			augmentedUiClass:"tl-clip br-clip both",
+			modalPopUpClassList: ["animate__animated", "animate__backInRight", "bg-image"],
+			augmentedUiClass: "tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
 
 			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
 			modalBodyContent: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
@@ -185,11 +201,19 @@
 		}
 
 		let bootstrapModal2 = new BootstrapModal(bootstrapConfig2);
+
+
+
+
+
 		document.body.appendChild(bootstrapModal2['dom'].dom);
 		//#endregion
 
 
 		bootstrapModal2.bootstrapModalButton.onClick(res => {
+			const element = document.getElementById('bgVideo');
+
+			element.remove();
 			init();
 			//render(); // remove when using next line for animation loop (requestAnimationFrame)
 			animate();
@@ -240,7 +264,7 @@
 
 				init();
 				animate();
-	
+
 			})
 			let length = menubar.dom.children.length;
 			menubar.dom.children[length - 1].appendChild(createSubmit);
@@ -438,8 +462,8 @@
 				intializeStartMapGoUI();
 			})
 			let length = menubar.dom.children.length;
-			menubar.dom.children[1].style.display="none";
-		
+			menubar.dom.children[1].style.display = "none";
+
 			menubar.dom.children[2].innerText = "";
 
 			menubar.dom.children[length - 1].appendChild(createSubmit);
