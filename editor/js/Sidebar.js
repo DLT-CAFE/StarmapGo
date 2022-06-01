@@ -76,9 +76,11 @@ function Sidebar(editor) {
 	const settings = new SidebarSettings(editor);
 
 	const addShape = new AddModalShape(editor);
-
+	container.addTab('registryA', strings.getKey('sidebar/registryA'), settings,"tabsSetting");
+	container.addTab('registryB', strings.getKey('sidebar/registryB'), settings,"tabsSetting");
 	container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
+	container.addTab('geoData', strings.getKey('sidebar/geoData'), settings,"tabsSetting");
 	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
 	container.addTab('settings', strings.getKey('sidebar/settings'), settings,"tabsSetting");
 	// container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");
