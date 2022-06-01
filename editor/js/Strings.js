@@ -86,8 +86,8 @@ function Strings( config ) {
 			'sidebar/animations/timescale': 'Time Scale',
 
 			'sidebar/entity': 'Entity',
-
 			'sidebar/scene': 'Scene',
+
 			'sidebar/scene/background': 'Background',
 			'sidebar/scene/environment': 'Environment',
 			'sidebar/scene/fog': 'Fog',
@@ -289,6 +289,7 @@ function Strings( config ) {
 			'sidebar/script/edit': 'Edit',
 			'sidebar/script/remove': 'Remove',
 
+			//#region region for SideBar Project
 			'sidebar/project': 'Project',
 			'sidebar/project/title': 'Title',
 			'sidebar/project/editable': 'Editable',
@@ -305,6 +306,19 @@ function Strings( config ) {
 			'sidebar/project/resolution': 'Resolution',
 			'sidebar/project/duration': 'Duration',
 			'sidebar/project/render': 'Render',
+			//#endregion
+
+			//#region Region for Registry A
+			'sidebar/registryA': 'Registry A',
+			//#endregion
+
+				//#region Region for Registry B
+				'sidebar/registryB': 'Registry B',
+			//#endregion
+
+				//#region Region for GEO Data
+				'sidebar/geoData': 'Registry B',
+			//#endregion
 
 			'sidebar/settings': 'Settings',
 			'sidebar/settings/language': 'Language',
