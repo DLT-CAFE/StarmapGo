@@ -127,18 +127,18 @@
 		//#region First BootStrap Modal.
 		let bootstrapConfig = {
 			bootstrapModalPopUpId: "first-PopModal",
-			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInDown", "bg-image"],
-			augmentedUiClass: "tl-clip br-clip both",
+			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__fadeIn", "bg-image"],
+			//augmentedUiClass: "tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
+			modalContentClassList: ["step1-content", "p-5", "pb-3"],
 
-			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
-			modalBodyContent: "LOGO TYPE LOTTIE ANIMATIONS",
+			modalBodyClassList: [ "display-6", "animate__animated", "animate__fadeIn"],
+			modalBodyContent: "In the begining, there was the great void. Then came the creation of our home, Gaiaplexa, and for the span of two cycles we sat alone in darkness and silence. Until one day, the first of the lights appeared in the night sky.",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
-			modalFooterButtonClassList: ["step1-startButton"],
-			modalFooterButtonId: "first-popButton",
+			modalFooterButtonClassList: ["step1-startButton","animate__animated", "animate__fadeIn"],
+			modalFooterButtonId: "first-popButton", 
 			nextPopUpId: "second-PopModal",
-			footerButtonText: "Start"
+			footerButtonText: "-START-"
 		}
 
 		let bootstrapModal = new BootstrapModal(bootstrapConfig);
@@ -147,17 +147,17 @@
 		//bootstrapModal.bootstrapModalButton['dom'].click();
 
 		//#region Second Bootstrap Modal Regio
-		let bootstrapConfig1 = {
+		let bootstrapConfig1 = { 
 			bootstrapModalPopUpId: "second-PopModal",
-			augmentedUiClass: "tl-clip br-clip both",
-			modalPopUpClassList: ["multiFormPopUp", "animate__animated", "animate__backInLeft", "bg-image"],
+			//augmentedUiClass: "tl-clip br-clip both",
+			modalPopUpClassList: ["multiFormPopUp2", "animate__animated", "animate__fadeIn", "bg-image"],
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
+			modalContentClassList: ["step2-content", "p-5", "pb-3"],
 
-			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
-			modalBodyContent: "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec",
+			modalBodyClassList: [ "display-6", "animate__animated", "animate__zoomIn"],
+			modalBodyContent: "Seeking meaning to the phenomenon a noble Guild was formed, and the Starmap-M project was born. The Guilds mission was to search,catalogue and connect every verse across the great void until there existed a single universal network of shared interoperable and persistent verses. That would come to be known as THE METAVERSE ",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
-			modalFooterButtonClassList: ["step1-startButton"],
+			modalFooterButtonClassList: ["step2-startButton","animate__animated", "animate__fadeIn"],
 			modalFooterButtonId: "second-popButton",
 			nextPopUpId: "third-PopModal",
 			footerButtonText: "Continue"
@@ -168,12 +168,12 @@
 
 			let video = document.createElement("video");
 			video.setAttribute("id", "bgVideo");
-			video.setAttribute("loop", true);
-			video.src = "images/video/space.mp4";
+			video.setAttribute("loop", true); 
+			video.src = "images/video/spacemodal33.mp4";
 			video.autoplay = true;
 
-			video.controls = true;
-			video.muted = false;
+			video.controls = false;
+			video.muted = true;
 			video.classList.add("modal2-video");
 			document.body.appendChild(video);
 
@@ -186,17 +186,17 @@
 
 			addVideo: true,
 			bootstrapModalPopUpId: "third-PopModal",
-			modalPopUpClassList: ["animate__animated", "animate__backInRight", "bg-image"],
-			augmentedUiClass: "tl-clip br-clip both",
+			modalPopUpClassList: ["animate__animated", "animate__fadeIn", "bg-image"],
+			//augmentedUiClass: "tl-clip br-clip both",
 			modalDailogClassList: [],
-			modalContentClassList: ["step1-content", "p-5", "pb-3", "my-augborder"],
+			modalContentClassList: ["step3-content", "p-5", "pb-3", "my-augborder"],
 
-			modalBodyClassList: ["display-6", "text-light", "fw-bold"],
-			modalBodyContent: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+			modalBodyClassList: ["display-6", "text-light", "fw-bold", "modallogo", ,"animate__animated", "animate__zoomIn"],
+			modalBodyContent: "",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
-			modalFooterButtonClassList: ["step1-startButton"],
+			modalFooterButtonClassList: ["step3-startButton"],
 			modalFooterButtonId: "third-popButton",
-			footerButtonText: "Continue"
+			footerButtonText: "Launch"
 
 		}
 

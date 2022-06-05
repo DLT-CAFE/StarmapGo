@@ -41,6 +41,7 @@ function Sidebar(editor) {
 	sideMain.add(toggleSec);
 	sideMain.setId("sidebar1");
 	sideMain.addClass("sideBarMainShow");
+	sideMain.setAttributeOfElement("data-augmented-ui", "tl-clip tr-2-clip-y r-clip-y br-2-clip-y bl-clip l-rect both");
 	const sidebarTitle = new UIDiv();
 	sidebarTitle.setId("sidebarTitle");
 

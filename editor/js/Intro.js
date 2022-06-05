@@ -51,8 +51,8 @@ function Intro(editor) {
 	textArea2.setTextContent("Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec");
 
 	let step3Button = new UIButton();
-	step3Button.setTextContent("Continue");
-	step3Button.addClass("step2-startButton");
+	step3Button.setTextContent("Launch");
+	step3Button.addClass("step3-startButton");
 	//#endregion
 
 

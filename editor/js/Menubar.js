@@ -14,7 +14,7 @@ function Menubar(editor) {
 	const strings = editor.strings;
 	const container = new UIPanel();
 	container.setId('menubar');
-
+	container.setAttributeOfElement("data-augmented-ui", "bl-clip br-clip both");
 	container.setInnerHTML('');
 	container.setClass("topNavbar");
 
@@ -29,7 +29,7 @@ function Menubar(editor) {
 	leftLogo.addClass("logo");
 	const logoImage = document.createElement('img');
 	logoImage.title = "Logo Image";
-	logoImage.src = 'images/starmapGoLogo.png';
+	logoImage.src = 'images/logo7.png';
 	logoImage.style.width = "200px";
 	leftLogo.dom.appendChild(logoImage);
 	leftContainer.add(leftLogo);
@@ -51,8 +51,8 @@ function Menubar(editor) {
 	forwardImage.addClass("forward-image");
 	const forwardlogoImage = document.createElement('img');
 	forwardlogoImage.title = "Undo";
-	forwardlogoImage.src = 'images/backward.png';
-	forwardlogoImage.style.width = "30px";
+	forwardlogoImage.src = 'images/undo.png';
+	forwardlogoImage.style.width = "35px";
 	forwardImage.dom.appendChild(forwardlogoImage);
 	forwardMainDiv.add(forwardImage);
 
@@ -79,8 +79,8 @@ function Menubar(editor) {
 	BackImage.addClass("backward-image");
 	const BacklogoImage = document.createElement('img');
 	BacklogoImage.title = "Redo";
-	BacklogoImage.src = 'images/forward.png';
-	BacklogoImage.style.width = "30px";
+	BacklogoImage.src = 'images/redo.png';
+	BacklogoImage.style.width = "35px";
 	BackImage.dom.appendChild(BacklogoImage);
 	BackMainDiv.add(BackImage);
 

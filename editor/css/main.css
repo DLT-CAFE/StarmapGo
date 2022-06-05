@@ -3,22 +3,49 @@
 }
 @font-face {
 	font-family: Oxanium;
-	src: url(Oxanium-VariableFont_wght.ttf);
+	src: url(Oxanium-Light.ttf);
   }
+  @font-face {
+    font-family: 'Neogrey';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neogrey'), url('NeogreyRegular.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Neogrey Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Neogrey Medium'), url('NeogreyMedium.woff') format('woff');
+    }
 
 
 .modal-body{
-	font-size: 18px !important;
-	font-weight: 400 !important;
-
-
+	font-size: 20px !important;
+    font-weight: 200 !important;
+    font-family: 'Neogrey',sans-serif;
+    line-height: 1.6 !important;
+    letter-spacing: 1px;
+    text-transform: none;
+    color: #f09f23;
+    text-shadow: 6px 6px 10px rgb(255 110 0 / 33%), -4px -4px 10px rgb(229 107 4 / 33%), -4px 4px 10px rgb(255 146 0 / 33%), 4px -4px 10px rgb(255 51 0 / 33%);
+	animation: zoom;
+	animation-duration: 3s !important;
+	margin-bottom: 40px;
+}
+.text-light {
+	color: #dd8d15 !important;
 }
 
 body {
-	font-family: Oxanium, Arial, sans-serif !important; 
-	font-size: 12px;
+	font-family: 'Neogrey', Arial, sans-serif !important; 
+	font-size: 10px;
+	letter-spacing: 1px;
 	margin: 0;
 	overflow: hidden;
+	background-color: #000 !important;
+	background-image: url('./../images/TheVoid.jpg');
 }
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
@@ -29,17 +56,18 @@ body {
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
+	height: 5px;
   }
 
   *::-webkit-scrollbar-track {
-    background: #2e2e2e;
+    background: #27272761;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #06c4ab;
-    border-radius: 5px;
-    border: 2px solid #2e2e2e;
+	background-color: #d5701299;
+    border-radius: 4px;
+    border: 1px solid #2e2e2e;
   }
 hr {
 	border: 0;
@@ -62,7 +90,7 @@ input {
 	}
 
 textarea {
-	tab-size: 4;
+	tab-size: 6;
 	white-space: pre;
 	word-wrap: normal;
 }
@@ -120,6 +148,7 @@ textarea, input { outline: none; } /* osx */
 		width: 100%;
 		height: 100%;
 		min-width: 300px;
+		padding-top: 20px;
 	}
 
 /* Listbox */
@@ -317,7 +346,7 @@ select {
 	text-transform: uppercase;
 	cursor: pointer;
 	outline: none;
-	border-color: hotpink;
+	border-color: #4e8ff078;
 }
 
 	select:hover {
@@ -371,15 +400,21 @@ select {
 #menubar {
 	position: absolute;
 	width: 100%;
-	height: 56px;
-
-	background-color: #747473;
+	height: 50px;
 	padding: 0;
 	margin: 0;
 	right: 0;
 	top: 0;
+	--aug-border-bg: linear-gradient(to bottom right, rgb(186 89 8 / 24%), #e5590645);
+    --aug-border-all: 1px;
+    --aug-border-top: 0px;
+    --aug-border-right: 0px;
+	--aug-border-left: 0px;
+	--aug-inlay-opacity: 0.2;
+    --aug-inlay-bg: #fefefd6b; 
 }
 
+ 
 	#menubar .menu {
 		cursor: pointer;
 		padding-right: 10px;
@@ -509,15 +544,16 @@ select {
 
 .Outliner {
 	color: #444;
-	background-color: #fff;
 	padding: 0;
 	width: 100%;
 	height: 120px;
-	font-size: 12px;
+	font-size: 10px;
 	cursor: default;
 	overflow: auto;
 	resize: vertical;
 	outline: none !important;
+	margin-top: -20px;
+	padding-top: 6px;
 }
 
 	.Outliner .option {
@@ -535,14 +571,11 @@ select {
 	}
 
 
-.TabbedPanel .Tabs {
-	background-color: #ddd;
-	border-top: 1px solid #ccc;
-}
+
 
 	.TabbedPanel .Tab {
 		color: #aaa;
-		border-right: 1px solid #ccc;
+		border-top: 1px solid #3c2c0285;
 	}
 
 	.TabbedPanel .Tab.selected {
@@ -556,7 +589,7 @@ select {
 }
 
 .Panel {
-	color: #f00;
+	padding-top: 0px !important;
 }
 
 /* */
@@ -643,25 +676,11 @@ select {
 	/* UI */
 
 	#menubar {
-		background: #031f2182;
-		border-bottom: 1px solid #09362f;
+		backdrop-filter: blur(2px) saturate(126%);
+    -webkit-backdrop-filter: blur(20px) saturate(179%);
+    
 	}
 
-			#menubar .menu .options {
-				background: #111;
-			}
-
-				#menubar .menu .options hr {
-					border-color: #222;
-				}
-
-				#menubar .menu .options .option {
-					color: #888;
-				}
-
-			#menubar .menu .options .inactive {
-				color: #444;
-			}
 
 	#sidebar {
 		/* background-color: #111; */
@@ -699,7 +718,7 @@ select {
 
 	.Outliner {
 		color: #f8f2f2;
-		background: #0a1517a3;
+		background: #000000a3;
 	}
 
 		.Outliner .option:hover {
@@ -711,19 +730,27 @@ select {
 		}
 
 	.TabbedPanel .Tabs {
-		background-color: #295e5d69;
-		border-top: 1px solid #222;
+		background-color: #0b070369;
+		border-right: 1px solid #2c1b0a69;
+
 		/* padding: 10px; */
 	}
 
 		.TabbedPanel .Tab {
-			color: #f3eeee;
-			border-right: 1px solid #222;
+			color: #a77704;
+			border-right: 1px solid #2c1b0a69;
+
 		}
 
 		.TabbedPanel .Tab.selected {
-			color: #16e8e7;
+			color: #6db9fd;
 			background-color: #111;
+			font-weight: bold;
+			font-size: 10px;
+			text-shadow:
+			0 0 5px rgba(0, 134, 255, .7),
+			0 0 20px rgba(0, 134, 255, .7),
+			0 0 60px rgba(0, 134, 255, .7);
 		}
 
 	.Listbox {
@@ -740,7 +767,7 @@ select {
 	}
 
 }
-#intro-overlay {
+/* #intro-overlay {
 	position: absolute;
   display: -webkit-box;
   display: -webkit-flex;
@@ -774,7 +801,7 @@ select {
   z-index: 10;
   background-color: black;
 }
-
+*/
 
 .center-container {
   position: absolute;

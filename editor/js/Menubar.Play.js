@@ -14,8 +14,8 @@ function MenubarPlay(editor) {
 	title.setClass('title');
 	const logoImage = document.createElement('img');
 	logoImage.title = "File Logo Image";
-	logoImage.src = 'images/play-icon.png';
-	logoImage.style.width = "30px";
+	logoImage.src = 'images/play1-icon.png';
+	logoImage.style.width = "40px";
 	title.dom.appendChild(logoImage);
 	title.onClick(function () {
 
@@ -31,7 +31,7 @@ function MenubarPlay(editor) {
 
 	
 			isPlaying = false;
-			title.dom.firstChild.src = "images/play-icon.png";
+			title.dom.firstChild.src = "images/play1-icon.png";
 			signals.stopPlayer.dispatch();
 
 		}
