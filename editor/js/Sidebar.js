@@ -8,6 +8,7 @@ import { SidebarProject } from './Sidebar.Project.js';
 import { SidebarSettings } from './Sidebar.Settings.js';
 import { SidebarEntity } from './Sidebar.Entity.js';
 import {AddModalShape} from './../starmapgo/AddModalShape.js';
+import {RegistryA} from './../starmapgo/RegistryA.js';
 
 function Sidebar(editor) {
 	const signals = editor.signals;
@@ -77,7 +78,8 @@ function Sidebar(editor) {
 	const settings = new SidebarSettings(editor);
 
 	const addShape = new AddModalShape(editor);
-	container.addTab('registryA', strings.getKey('sidebar/registryA'), settings,"tabsSetting");
+	const registryA = new RegistryA(editor);
+	container.addTab('registryA', strings.getKey('sidebar/registryA'), registryA,"tabsSetting");
 	container.addTab('registryB', strings.getKey('sidebar/registryB'), settings,"tabsSetting");
 	container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");

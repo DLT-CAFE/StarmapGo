@@ -198,6 +198,27 @@ class UISpan extends UIElement {
 
 }
 
+
+class UIFieldSet extends UIElement {
+
+	constructor() {
+
+		super(document.createElement('fieldset'));
+
+	}
+
+}
+
+class UILegend extends UIElement {
+
+	constructor() {
+
+		super(document.createElement('legend'));
+
+	}
+
+}
+
 class UIDiv extends UIElement {
 
 	constructor() {
@@ -285,7 +306,9 @@ class UIInput extends UIElement {
 
 		});
 
+		if(text){
 		this.setValue(text);
+		}
 
 	}
 
@@ -1421,4 +1444,4 @@ class UIIcon extends UIElement {
 	}
 }
 
-export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIProgress, UITabbedPanel, UIListbox, ListboxItem, BootstrapModal, UIIcon };
+export { UIElement, UISpan, UIDiv, UIRow, UIPanel, UIText, UIInput, UITextArea, UISelect, UILegend,UICheckbox, UIColor, UINumber, UIInteger, UIBreak, UIHorizontalRule, UIButton, UIProgress, UITabbedPanel, UIListbox, ListboxItem, BootstrapModal, UIIcon,UIFieldSet, };
