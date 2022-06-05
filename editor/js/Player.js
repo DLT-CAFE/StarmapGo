@@ -47,12 +47,12 @@ function Player( editor ) {
 		let scene = editor.scene;
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load([
-			'./images/viewport/viewportskymapBK.png',
-		'./images/viewport/viewportskymapDN.png',
-		'./images/viewport/viewportskymapFT.png',
-		'./images/viewport/viewportskymapLF.png',
-		'./images/viewport/viewportskymapRT.png',
-		'./images/viewport/viewportskymapUP.png',
+			'./images/viewport/SpaceBack.png',
+			'./images/viewport/SpaceBottom.png',
+			'./images/viewport/SpaceFront.png',
+			'./images/viewport/SpaceLeft.png',
+			'./images/viewport/SpaceRight.png',
+			'./images/viewport/SpaceTop.png',
 		]);
 
 		scene.background = texture;

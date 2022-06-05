@@ -347,6 +347,7 @@ margin-right: -60px !important;
       margin-left: 12px;
       letter-spacing: 2px; 
       color: darkorange;
+      margin-right:12px;
   }
   br.Break {
     display: none;
@@ -397,6 +398,11 @@ legend {
     flex: 0 0 auto;
     width: 50%;
     margin-top: 5px !important;
+}
+}
+@media (prefers-color-scheme: dark){
+.Outliner .option.active {
+    background-color: rgb(21 60 94 / 24%) !important;
 }
 }
 .Checkbox{
