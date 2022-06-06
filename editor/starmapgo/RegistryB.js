@@ -35,7 +35,11 @@ function RegistryB(editor) {
     let organizationTypes = ["DOA",  "Private", "Decentralized", "Hybrid","Centralized Public"];
     for (let i = 0; i < organizationTypes.length; i++) {
         let checkboxDiv = new UIDiv();
+        if(i<4){
         checkboxDiv.addClass("col-sm-6");
+        }else{
+            checkboxDiv.addClass("col-sm-12");
+        }
         checkboxDiv.add(new UICheckbox(false).setMarginRight('2px'));
         checkboxDiv.add(new UIText(organizationTypes[i]).addClass("white-font"));
         orgField.add(checkboxDiv);
