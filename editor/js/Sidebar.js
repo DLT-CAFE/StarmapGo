@@ -9,6 +9,9 @@ import { SidebarSettings } from './Sidebar.Settings.js';
 import { SidebarEntity } from './Sidebar.Entity.js';
 import {AddModalShape} from './../starmapgo/AddModalShape.js';
 import {RegistryA} from './../starmapgo/RegistryA.js';
+import {RegistryB} from './../starmapgo/RegistryB.js';
+import {GeoData} from './../starmapgo/GeoData.js';
+
 
 function Sidebar(editor) {
 	const signals = editor.signals;
@@ -79,11 +82,13 @@ function Sidebar(editor) {
 
 	const addShape = new AddModalShape(editor);
 	const registryA = new RegistryA(editor);
+	const geoData = new GeoData(editor);
+	const registryB = new RegistryB(editor);
 	container.addTab('registryA', strings.getKey('sidebar/registryA'), registryA,"tabsSetting");
-	container.addTab('registryB', strings.getKey('sidebar/registryB'), settings,"tabsSetting");
+	container.addTab('registryB', strings.getKey('sidebar/registryB'), registryB,"tabsSetting");
 	container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
-	container.addTab('geoData', strings.getKey('sidebar/geoData'), settings,"tabsSetting");
+	container.addTab('geoData', strings.getKey('sidebar/geoData'), geoData,"tabsSetting");
 	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
 	container.addTab('settings', strings.getKey('sidebar/settings'), settings,"tabsSetting");
 	// container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");

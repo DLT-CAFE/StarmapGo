@@ -317,7 +317,7 @@ function Strings( config ) {
 			//#endregion
 
 				//#region Region for GEO Data
-				'sidebar/geoData': 'Registry B',
+				'sidebar/geoData': 'Geo Data',
 			//#endregion
 
 			'sidebar/settings': 'Settings',
