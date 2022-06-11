@@ -19,8 +19,14 @@
 </head>
 
 <body>
+	<audio id="audioplay" loop autoplay>
+		<source src="./audio/modal1.mp3" type="audio/mp3">
+	</audio>
 
 
+	<script type="text/javascript">
+
+	</script>
 
 
 
@@ -132,32 +138,44 @@
 			modalDailogClassList: [],
 			modalContentClassList: ["step1-content", "p-5", "pb-3"],
 
-			modalBodyClassList: [ "display-6", "animate__animated", "animate__fadeIn"],
+			modalBodyClassList: ["display-6", "animate__animated", "animate__fadeIn"],
 			modalBodyContent: "In the begining, there was the great void. Then came the creation of our home, Gaiaplexa, and for the span of two cycles we sat alone in darkness and silence. Until one day, the first of the lights appeared in the night sky.",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
-			modalFooterButtonClassList: ["step1-startButton","animate__animated", "animate__fadeIn"],
-			modalFooterButtonId: "first-popButton", 
+			modalFooterButtonClassList: ["step1-startButton", "animate__animated", "animate__fadeIn"],
+			modalFooterButtonId: "first-popButton",
 			nextPopUpId: "second-PopModal",
 			footerButtonText: "-START-"
 		}
 
 		let bootstrapModal = new BootstrapModal(bootstrapConfig);
 		document.body.appendChild(bootstrapModal['dom'].dom);
+
+		bootstrapModal.bootstrapModalButton.onClick(res => {
+			if (document.getElementById('audioplay')) {
+				document.getElementById('audioplay').play();
+			}
+		});
+
+
 		//#endregion
+
+
+
+
 		//bootstrapModal.bootstrapModalButton['dom'].click();
 
 		//#region Second Bootstrap Modal Regio
-		let bootstrapConfig1 = { 
+		let bootstrapConfig1 = {
 			bootstrapModalPopUpId: "second-PopModal",
 			//augmentedUiClass: "tl-clip br-clip both",
 			modalPopUpClassList: ["multiFormPopUp2", "animate__animated", "animate__fadeIn", "bg-image"],
 			modalDailogClassList: [],
 			modalContentClassList: ["step2-content", "p-5", "pb-3"],
 
-			modalBodyClassList: [ "display-6", "animate__animated", "animate__zoomIn"],
+			modalBodyClassList: ["display-6", "animate__animated", "animate__zoomIn"],
 			modalBodyContent: "Seeking meaning to the phenomenon a noble Guild was formed, and the Starmap-M project was born. The Guilds mission was to search,catalogue and connect every verse across the great void until there existed a single universal network of shared interoperable and persistent verses. That would come to be known as THE METAVERSE ",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
-			modalFooterButtonClassList: ["step2-startButton","animate__animated", "animate__fadeIn"],
+			modalFooterButtonClassList: ["step2-startButton", "animate__animated", "animate__fadeIn"],
 			modalFooterButtonId: "second-popButton",
 			nextPopUpId: "third-PopModal",
 			footerButtonText: "Continue"
@@ -168,7 +186,7 @@
 
 			let video = document.createElement("video");
 			video.setAttribute("id", "bgVideo");
-			video.setAttribute("loop", true); 
+			video.setAttribute("loop", true);
 			video.src = "images/video/spacemodal33.mp4";
 			video.autoplay = true;
 
@@ -191,7 +209,7 @@
 			modalDailogClassList: [],
 			modalContentClassList: ["step3-content", "p-5", "pb-3", "my-augborder"],
 
-			modalBodyClassList: ["display-6", "text-light", "fw-bold", "modallogo", ,"animate__animated", "animate__zoomIn"],
+			modalBodyClassList: ["display-6", "text-light", "fw-bold", "modallogo", , "animate__animated", "animate__zoomIn"],
 			modalBodyContent: "",
 			modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
 			modalFooterButtonClassList: ["step3-startButton"],
@@ -228,6 +246,14 @@
 		})
 		myModal.show();
 		//#endregion
+
+		//#region Play or Stop audio
+		function playOrStopAudio(){
+			debugger;
+		}
+		//#endregion
+
+
 
 
 		//#region  Initialize Editor For Three.js
