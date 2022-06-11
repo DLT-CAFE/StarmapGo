@@ -6,10 +6,16 @@ export const viewPortBackGroundColor= 0xff0000;
 export const viewPortBackGroundImage="./images/space2.jpg";
 export const enviromentImage="./images/testImage.jpg";
 
+
+
+//#region please donot change these values
 export const fogType="Fog";
 export const fogColor="#aaaaaa";
-export const fogNear =0;
-export const fogFar =0;
+export const fogNear =1;
+export const fogFar =100;
+//#endregion
+
+
 export const skyBoxImagesList = ['./images/viewport/viewportskymapBK.png',
     './images/viewport/viewportskymapDN.png',
     './images/viewport/viewportskymapFT.png',
@@ -24,4 +30,16 @@ export const skyBoxImagesList = ['./images/viewport/viewportskymapBK.png',
 		'./images/viewport/SpaceLeft.png', 
 		'./images/viewport/SpaceRight.png', 
 		'./images/viewport/SpaceTop.png',
-	]
+	];
+
+
+	export const skyBoxImageListOnPlay=
+		[
+			'./images/viewport/image1.jpg',
+			'./images/viewport/image2.jpg',
+			'./images/viewport/image3.jpg',
+			'./images/viewport/image4.jpg',
+			'./images/viewport/image5.jpg',
+			'./images/viewport/image6.jpg',
+		  ];
+	

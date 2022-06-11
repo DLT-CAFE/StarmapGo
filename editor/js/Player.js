@@ -1,6 +1,7 @@
 import { UIPanel } from './libs/ui.js';
 import { APP } from './libs/app.js';
 import * as THREE from 'three';
+import { skyBoxImagesList,skyBoxImagesList1,skyBoxImageListOnPlay } from './StarMap-Constant.js';
 function Player( editor ) {
 
 	const signals = editor.signals;
@@ -28,14 +29,7 @@ function Player( editor ) {
 	signals.startPlayer.add( function () {
 		let scene = editor.scene;
 		const loader = new THREE.CubeTextureLoader();
-		const texture = loader.load([
-		  './images/viewport/image1.jpg',
-		  './images/viewport/image2.jpg',
-		  './images/viewport/image3.jpg',
-		  './images/viewport/image4.jpg',
-		  './images/viewport/image5.jpg',
-		  './images/viewport/image6.jpg',
-		]);
+		const texture = loader.load(skyBoxImageListOnPlay);
 		scene.background = texture;
 
 		setTimeout(()=>{
@@ -46,14 +40,7 @@ function Player( editor ) {
 	signals.stopPlayer.add( function () {
 		let scene = editor.scene;
 		const loader = new THREE.CubeTextureLoader();
-		const texture = loader.load([
-			'./images/viewport/SpaceBack.png',
-			'./images/viewport/SpaceBottom.png',
-			'./images/viewport/SpaceFront.png',
-			'./images/viewport/SpaceLeft.png',
-			'./images/viewport/SpaceRight.png',
-			'./images/viewport/SpaceTop.png',
-		]);
+		const texture = loader.load(skyBoxImagesList1);
 
 		scene.background = texture;
 	
