@@ -14,7 +14,7 @@ import { VR } from './Viewport.VR.js';
 import { SetPositionCommand } from './commands/SetPositionCommand.js';
 import { SetRotationCommand } from './commands/SetRotationCommand.js';
 import { SetScaleCommand } from './commands/SetScaleCommand.js';
-
+import { skyBoxImagesList,skyBoxImagesList1 } from './StarMap-Constant.js';
 
 import { RoomEnvironment } from '../../examples/jsm/environments/RoomEnvironment.js';
 
@@ -44,14 +44,9 @@ function Viewport(editor) {
 
 	//#region creating skybox for background image
 	const loader = new THREE.CubeTextureLoader();
-	const texture = loader.load([
-		'./images/viewport/SpaceBack.png',
-		'./images/viewport/SpaceBottom.png',
-		'./images/viewport/green_sky_front5.png',
-		'./images/viewport/SpaceLeft.png', 
-		'./images/viewport/SpaceRight.png', 
-		'./images/viewport/SpaceTop.png',
-	]);
+
+	const texture = loader.load(skyBoxImagesList);
+	// const texture = loader.load(skyBoxImagesList1);
 	scene.background = texture;
 
 	setTimeout(res => {
