@@ -19,13 +19,110 @@
 </head>
 
 <body>
-	<audio id="audioplay" loop autoplay>
+	<!-- <audio id="audioplay" loop autoplay>
 		<source src="./audio/modal1.mp3" type="audio/mp3">
-	</audio>
+	</audio> -->
+
+	<!--------------------CODE FOR INITIAL PRE-LOADING SCREEEN Starts Here---------------------->
+	<div id="preloader">
+		<div class="text-center">
+			<button type="button" class="btn btn-primary" onclick="OpenPopUpAndPlayAudio()">Go To Next</button>
+		</div>
+		<div class="preloader-main d-flex align-items-center justify-content-center">
+			<div class="preloader-1  animate__zoomIn">
+				<div class="preloader-div">Loading</div>
+				<span class="line line-1"></span>
+				<span class="line line-2"></span>
+				<span class="line line-3"></span>
+				<span class="line line-4"></span>
+				<span class="line line-5"></span>
+				<span class="line line-6"></span>
+				<span class="line line-7"></span>
+				<span class="line line-8"></span>
+				<span class="line line-9"></span>
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+	<!----------------------CODE FOR INITIAL PRE-LOADING SCREEEN ENDS HERE---------------------->
+
+
 
 
 	<script type="text/javascript">
 
+
+        // this is for the audio play/ stop functionality button.
+          var audioIsPlaying = true;
+		  //#region 
+		
+
+		function createAudioTag() {
+			var x = document.createElement("AUDIO");
+			x.setAttribute("id", "audioplay");
+			if (x.canPlayType("audio/mpeg")) {
+				x.setAttribute("src", "./audio/modal1.mp3");
+			}
+			x.setAttribute("hidden", "hidden");
+			x.setAttribute("controls", "controls");
+			if(audioIsPlaying){
+			x.setAttribute("autoplay", "autoplay");
+			}
+			x.setAttribute("loop", "loop");
+			document.body.appendChild(x);
+
+		}
+
+		function playAudio() {
+			if (document.getElementById('audioplay')) {
+				if(!audioIsPlaying){
+					document.getElementById('audioplay').pause();	
+				}else{
+				document.getElementById('audioplay').play();
+				}
+			}
+		}
+
+		function createAudioMuteButton(){
+			let createSubmit = document.createElement("button");
+			createSubmit.classList.add("btn");
+			createSubmit.classList.add("btn-light");
+			createSubmit.classList.add("audio-muteUnMute");
+			createSubmit.innerText = audioIsPlaying ? "Mute":"UnMute";
+			createSubmit.addEventListener('click', () => {
+				audioIsPlaying = !audioIsPlaying;
+				createSubmit.innerText = audioIsPlaying ? "Mute":"UnMute";
+				playAudio();
+
+			})
+
+
+			document.body.appendChild(createSubmit);
+		}
+
+
+		//#region Play or Stop audio
+		function OpenPopUpAndPlayAudio() {
+			let getData = document.getElementById('preloader')
+			if (getData) {
+				getData.remove();
+			}
+			//#region Showing the First Bootstrap Modal on the Start
+			var myModal = new bootstrap.Modal(document.getElementById('first-PopModal'), {
+				keyboard: false
+			})
+			myModal.show();
+			//#endregion
+			createAudioTag();
+			playAudio();
+
+
+		}
+		//#endregion
 	</script>
 
 
@@ -121,7 +218,7 @@
 		signals.initializeStarMapGo.add(function () {
 
 			intializeStartMapGoUI();
-
+		
 		});
 
 
@@ -151,9 +248,7 @@
 		document.body.appendChild(bootstrapModal['dom'].dom);
 
 		bootstrapModal.bootstrapModalButton.onClick(res => {
-			if (document.getElementById('audioplay')) {
-				document.getElementById('audioplay').play();
-			}
+
 		});
 
 
@@ -240,18 +335,9 @@
 		})
 
 
-		//#region Showing the First Bootstrap Modal on the Start
-		var myModal = new bootstrap.Modal(document.getElementById('first-PopModal'), {
-			keyboard: false
-		})
-		myModal.show();
-		//#endregion
 
-		//#region Play or Stop audio
-		function playOrStopAudio(){
-			debugger;
-		}
-		//#endregion
+
+
 
 
 
@@ -265,7 +351,23 @@
 
 			const toolbar = new Toolbar(editor);
 			document.body.appendChild(toolbar.dom);
+			let createSubmit = document.createElement("button");
+			createSubmit.classList.add("btn");
+			createSubmit.classList.add("btn-primary");
+			createSubmit.classList.add("builder-button");
+			createSubmit.innerText = "Back";
+			createSubmit.addEventListener('click', () => {
+				removeAllChildNotesOtherThanAudioFromBody();
+				init();
+				animate();
+				createAudioTag();
+				playAudio();
+			
 
+			})
+
+
+			document.body.appendChild(createSubmit);
 			const script = new Script(editor);
 			document.body.appendChild(script.dom);
 
@@ -276,36 +378,23 @@
 			document.body.appendChild(sidebar.dom);
 
 			const menubar = new Menubar(editor);
-			let createSubmit = document.createElement("button");
-			createSubmit.classList.add("btn");
-			createSubmit.classList.add("btn-primary");
-			createSubmit.innerText = "Back";
-			createSubmit.addEventListener('click', () => {
-				let list = document.getElementsByTagName("body")[0];
 
-				// As long as <ul> has a child node, remove it
-				while (list.hasChildNodes()) {
-					list.removeChild(list.firstChild);
-				}
-
-				init();
-				animate();
-
-			})
 			let length = menubar.dom.children.length;
-			menubar.dom.children[length - 1].appendChild(createSubmit);
+			//menubar.dom.children[length - 1].appendChild(createSubmit);
 			document.body.appendChild(menubar.dom);
 
 
 
 
-			document.body.appendChild(menubar.dom);
+			//	document.body.appendChild(menubar.dom);
 
 			const resizer = new Resizer(editor);
 			document.body.appendChild(resizer.dom);
 
 			//
 
+
+	
 
 
 
@@ -472,28 +561,28 @@
 
 		function init() {
 			const menubar = new Menubar(editor);
-
+			createAudioMuteButton();
 			let createSubmit = document.createElement("button");
 			createSubmit.classList.add("btn");
 			createSubmit.classList.add("btn-primary");
+			createSubmit.classList.add("builder-button");
 			createSubmit.innerText = "Builder";
 			createSubmit.addEventListener('click', () => {
-				let list = document.getElementsByTagName("body")[0];
-
-				// As long as <ul> has a child node, remove it
-				while (list.hasChildNodes()) {
-					list.removeChild(list.firstChild);
-				}
+				removeAllChildNotesOtherThanAudioFromBody();
 
 				intializeStartMapGoUI();
+				createAudioTag();
+				playAudio();
+				createAudioMuteButton();
 			})
 			let length = menubar.dom.children.length;
 			menubar.dom.children[1].style.display = "none";
 
 			menubar.dom.children[2].innerText = "";
 
-			menubar.dom.children[length - 1].appendChild(createSubmit);
+			//menubar.dom.children[length - 1].appendChild(createSubmit);
 			document.body.appendChild(menubar.dom);
+			document.body.appendChild(createSubmit);
 			scene = new THREE.Scene();
 			scene.background = new THREE.Color(0xcccccc);
 			scene.fog = new THREE.FogExp2(0xcccccc, 0.002);
@@ -583,6 +672,29 @@
 			renderer.render(scene, camera);
 
 		}
+
+
+		function removeAllChildNotesOtherThanAudioFromBody() {
+			let list = document.getElementsByTagName("body")[0];
+
+
+			// debugger;
+			// for(let i=0;i<list.children.length;i++){
+			// 	let nodeInfo = list.children[i];
+			// 	if(nodeInfo.id !== 'audioplay'){
+			//           nodeInfo.remove();
+			// 	}
+
+			// }
+			// As long as <ul> has a child node, remove it
+			while (list.hasChildNodes()) {
+
+				// if(list.firstChild.id !== 'audioplay'){
+				list.removeChild(list.firstChild);
+				// }
+			}
+		}
+
 
 
 

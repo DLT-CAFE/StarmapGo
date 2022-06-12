@@ -6,7 +6,6 @@
 
 
 
-
 /********************************************************************/
 
 
@@ -408,3 +407,84 @@ legend {
 .Checkbox{
     margin-right: 6px !important;
 }
+
+.builder-button{
+    position: absolute;
+    /* margin-right: 0px !important; */
+    /* margin: 37px; */
+    right: 13px;
+    top: 53px;
+  
+    }
+
+    .audio-muteUnMute{
+        position: absolute;
+        left: 5px;
+  
+        left: 25px;
+        top: 53px;
+        height: 30px;
+        padding: 5px !important;
+    }
+
+
+/********CSS FOR INITIAL PRE LOADING SCREEN STARTS HERE*************/
+
+  .preloader-main {
+    height: 85vh !important;
+    /* margin: 100px auto 0;
+    width: 66px;
+    height: 12px; */
+  }
+  
+
+  
+  .preloader-div {
+    color: #fff;
+    margin: 5px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    display: block;
+    width: 100% !important;
+  }
+  
+  
+  .preloader-1 .line {
+    width: 2px;
+    height: 24px;
+    background: #fff;
+    margin: 0 2px;
+    display: inline-block;
+    animation: opacity-1 1000ms infinite ease-in-out;
+    
+  }
+  
+
+  
+  .preloader-1 .line-1{ animation-delay: 800ms; }
+  .preloader-1 .line-2 { animation-delay: 600ms; }
+  .preloader-1 .line-3 { animation-delay: 400ms; }
+  .preloader-1 .line-4 { animation-delay: 200ms; }
+  .preloader-1 .line-6 { animation-delay: 200ms; }
+  .preloader-1 .line-7 { animation-delay: 400ms; }
+  .preloader-1 .line-8 { animation-delay: 600ms; }
+  .preloader-1 .line-9 { animation-delay: 800ms; }
+  
+  @keyframes opacity-1 { 
+    0% { 
+      opacity: 1;
+    }
+    50% { 
+      opacity: 0;
+    }
+    100% { 
+      opacity: 1;
+    }  
+  }
+  
+
+
+/********CSS FOR INITIAL PRE LOADING SCREEN ENDS HERE*************/
