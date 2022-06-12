@@ -104,7 +104,7 @@ function Sidebar(editor) {
 	//sideBarBottom.setId("sidebarTitle");
 	sideBarBottom.addClass("bottomSection");
 	
-	sideBarBottom.addClass("d-flex");
+	sideBarBottom.addClass("d-flex"); 
 	sideBarBottom.addClass("justify-content-around");
 
 	let saveButton = new UIButton();

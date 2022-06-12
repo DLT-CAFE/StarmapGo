@@ -17,9 +17,10 @@ function AddModalShape(editor) {
     boxShape.addClass("p-3");
     const boxImage = document.createElement('img');
     boxImage.title = "Box Shape";
-    boxImage.src = 'images/addShape/box.png';
+    boxImage.src = 'images/addShape/planet2.png';
     boxImage.style.width = "60px";
     boxImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px";
     boxShape.dom.appendChild(boxImage);
     boxShape.onClick(function () {
 
@@ -39,9 +40,10 @@ function AddModalShape(editor) {
     capsuleShape.addClass("p-3");
     const capsuleImage = document.createElement('img');
     capsuleImage.title = "Tube Shape";
-    capsuleImage.src = 'images/addShape/tube.png';
+    capsuleImage.src = 'images/addShape/planets5.png';
     capsuleImage.style.width = "60px";
     capsuleImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px";
     capsuleShape.dom.appendChild(capsuleImage);
     capsuleShape.onClick(function () {
         const path = new THREE.CatmullRomCurve3([
@@ -67,9 +69,10 @@ function AddModalShape(editor) {
     circleShape.addClass("p-3");
     const circleImage = document.createElement('img');
     circleImage.title = "Circle";
-    circleImage.src = 'images/addShape/circle.png';
+    circleImage.src = 'images/addShape/planets6.png';
     circleImage.style.width = "60px";
     circleImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px";
     circleShape.dom.appendChild(circleImage);
     circleShape.onClick(function () {
 
@@ -88,9 +91,10 @@ function AddModalShape(editor) {
     cylinderShape.addClass("p-3");
     const cylinderImage = document.createElement('img');
     cylinderImage.title = "Cylinder Shape";
-    cylinderImage.src = 'images/addShape/cylinder.png';
+    cylinderImage.src = 'images/addShape/planets4.png';
     cylinderImage.style.width = "60px";
     cylinderImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px";
     cylinderShape.dom.appendChild(cylinderImage);
     cylinderShape.onClick(function () {
 
@@ -110,9 +114,10 @@ function AddModalShape(editor) {
     sphereShape.addClass("p-3");
     const sphereImage = document.createElement('img');
     sphereImage.title = "Sphere Shape";
-    sphereImage.src = 'images/addShape/sphere.png';
+    sphereImage.src = 'images/addShape/planets3.png';
     sphereImage.style.width = "60px";
     sphereImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px";
     sphereShape.dom.appendChild(sphereImage);
     sphereShape.onClick(function () {
 
@@ -133,9 +138,10 @@ function AddModalShape(editor) {
     octahedronShape.addClass("p-3");
     const octahedronImage = document.createElement('img');
     octahedronImage.title = "Octahedron Shape";
-    octahedronImage.src = 'images/addShape/octahedron.png';
+    octahedronImage.src = 'images/addShape/planets1.png';
     octahedronImage.style.width = "60px";
     octahedronImage.style.height = "60px";
+    boxImage.style.marginBottom = "10px"; 
     octahedronShape.dom.appendChild(octahedronImage);
     octahedronShape.onClick(function () {
 
@@ -157,8 +163,8 @@ function AddModalShape(editor) {
     const ambientLight = new UIDiv();
     ambientLight.addClass("whiteBackground");
     const ambientLightButton = new UIButton(strings.getKey('menubar/add/ambientlight'));
-    ambientLightButton.addClass("btn");
-    ambientLightButton.addClass("btn-primary");
+    ambientLightButton.setAttributeOfElement("data-augmented-ui", "tl-clip tr-clip bl-clip br-clip both");
+    ambientLightButton.addClass("btn-design-a");
     ambientLightButton.onClick(function () {
         const color = 0x222222;
         const light = new THREE.AmbientLight(color);
@@ -175,8 +181,8 @@ function AddModalShape(editor) {
     const directionalLight = new UIDiv();
     directionalLight.addClass("whiteBackground");
     const directionalLightButton = new UIButton(strings.getKey('menubar/add/directionallight'));
-    directionalLightButton.addClass("btn");
-    directionalLightButton.addClass("btn-primary");
+    directionalLightButton.setAttributeOfElement("data-augmented-ui", "tl-clip tr-clip bl-clip br-clip both");
+    directionalLightButton.addClass("btn-design-a");
     directionalLightButton.onClick(function () {
         const color = 0xffffff;
         const intensity = 1;
@@ -199,16 +205,16 @@ function AddModalShape(editor) {
     const hemispherelight = new UIDiv();
     hemispherelight.addClass("whiteBackground");
     const hemispherelightButton = new UIButton(strings.getKey('menubar/add/hemispherelight'));
-    hemispherelightButton.addClass("btn");
-    hemispherelightButton.addClass("btn-primary");
+    hemispherelightButton.setAttributeOfElement("data-augmented-ui", "tl-clip tr-clip bl-clip br-clip both");
+    hemispherelightButton.addClass("btn-design-a");
     hemispherelightButton.onClick(function () {
         const skyColor = 0x00aaff;
         const groundColor = 0xffaa00;
         const intensity = 1;
 
         const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
-        light.name = 'HemisphereLight';
-
+        light.name = 'Hemisphere';
+ 
         light.position.set(0, 10, 0);
 
         editor.execute(new AddObjectCommand(editor, light));
@@ -223,8 +229,8 @@ function AddModalShape(editor) {
         const spotlight = new UIDiv();
         spotlight.addClass("whiteBackground");
         const spotlightButton = new UIButton(strings.getKey( 'menubar/add/spotlight' ));
-        spotlightButton.addClass("btn");
-        spotlightButton.addClass("btn-primary");
+        spotlightButton.setAttributeOfElement("data-augmented-ui", "tl-clip tr-clip bl-clip br-clip both");
+        spotlightButton.addClass("btn-design-a");
         spotlightButton.onClick(function () {
             const color = 0xffffff;
             const intensity = 1;
@@ -273,7 +279,7 @@ function AddModalShape(editor) {
         importModalButton.onClick( function () {
     
             fileInput.click();
-    
+     
         } );
         importModal.add(importModalButton);
         container.add(importModal);

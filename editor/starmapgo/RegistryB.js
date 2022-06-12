@@ -20,7 +20,7 @@ function RegistryB(editor) {
     orgType.addClass("white-font");
 
     let orgField = new UIFieldSet();
-    orgField.addClass("border");
+    orgField.addClass("borderno");
 
     orgField.addClass("row");
     let orgLegend = new UILegend();
@@ -56,7 +56,7 @@ function RegistryB(editor) {
     consensesDiv.addClass("white-font");
 
     let consensesField = new UIFieldSet();
-    consensesField.addClass("border");
+    consensesField.addClass("borderno"); 
 
     consensesField.addClass("row");
     let consensesLegend = new UILegend();
@@ -121,7 +121,7 @@ function RegistryB(editor) {
     accessDiv.addClass("white-font");
 
     let accessField = new UIFieldSet();
-    accessField.addClass("border");
+    accessField.addClass("borderno");
 
     accessField.addClass("row");
     let accessLegend = new UILegend();
@@ -153,7 +153,7 @@ function RegistryB(editor) {
     walletDiv.addClass("white-font");
 
     let walletField = new UIFieldSet();
-    walletField.addClass("border");
+    walletField.addClass("borderno");
 
     walletField.addClass("row");
     let walletLegend = new UILegend();
@@ -221,7 +221,7 @@ function RegistryB(editor) {
     commerceDiv.addClass("white-font");
 
     let commerceField = new UIFieldSet();
-    commerceField.addClass("border");
+    commerceField.addClass("borderno");
 
     commerceField.addClass("row");
     let commerceLegend = new UILegend();
@@ -320,7 +320,7 @@ function RegistryB(editor) {
     stakingDiv.addClass("white-font");
 
     let stakingField = new UIFieldSet();
-    stakingField.addClass("border");
+    stakingField.addClass("borderno");
 
     stakingField.addClass("row");
     let stakingLegend = new UILegend();

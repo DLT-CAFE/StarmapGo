@@ -44,8 +44,7 @@ body {
 	letter-spacing: 1px;
 	margin: 0;
 	overflow: hidden;
-	background-color: #000 !important;
-	background-image: url('./../images/TheVoid.jpg');
+	background-color: #000 !important; 
 }
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
@@ -410,8 +409,8 @@ select {
     --aug-border-top: 0px;
     --aug-border-right: 0px;
 	--aug-border-left: 0px;
-	--aug-inlay-opacity: 0.2;
-    --aug-inlay-bg: #fefefd6b; 
+	--aug-inlay-opacity: 0.3;
+    --aug-inlay-bg: #231704;
 }
 
  

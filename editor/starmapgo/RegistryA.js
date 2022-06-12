@@ -168,7 +168,7 @@ function RegistryA(editor) {
     verTypeDiv.addClass("mb-1");
 
     let verTypeField = new UIFieldSet();
-    verTypeField.addClass("border");
+    verTypeField.addClass("borderno");
 
     verTypeField.addClass("row");
     let vertypeLegend = new UILegend();
@@ -199,7 +199,7 @@ function RegistryA(editor) {
     let realityDiv = new UIDiv();
      realityDiv.addClass("mb-1");
     let realityField = new UIFieldSet();
-    realityField.addClass("border");
+    realityField.addClass("borderno");
 
     realityField.addClass("row");
     let realityLegend = new UILegend();
@@ -229,7 +229,7 @@ function RegistryA(editor) {
     let fidelityDiv = new UIDiv();
   fidelityDiv.addClass("mb-1");
     let fidelityField = new UIFieldSet();
-    fidelityField.addClass("border");
+    fidelityField.addClass("borderno");
 
     fidelityField.addClass("row");
     let fidelityLegend = new UILegend();
@@ -258,9 +258,9 @@ function RegistryA(editor) {
 
     //#region Region for Fidelity FieldSet
     let fidelityDiv1 = new UIDiv();
-    fidelityDiv1.addClass("mb-1");
+    fidelityDiv1.addClass("mb-1"); 
     let fidelityField1 = new UIFieldSet();
-    fidelityField1.addClass("border");
+    fidelityField1.addClass("borderno");
 
     fidelityField1.addClass("row");
     let fidelityLegend1 = new UILegend();
