@@ -28,8 +28,11 @@ function Player( editor ) {
 
 	signals.startPlayer.add( function () {
 		let scene = editor.scene;
+
+		
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load(skyBoxImageListOnPlay);
+		texture.mapping = THREE.CubeRefractionMapping;
 		scene.background = texture;
 
 		setTimeout(()=>{
@@ -40,8 +43,8 @@ function Player( editor ) {
 	signals.stopPlayer.add( function () {
 		let scene = editor.scene;
 		const loader = new THREE.CubeTextureLoader();
-		const texture = loader.load(skyBoxImagesList1);
-
+		const texture = loader.load(skyBoxImagesList);
+		texture.mapping = THREE.CubeRefractionMapping;
 		scene.background = texture;
 	
 		setTimeout(()=>{
