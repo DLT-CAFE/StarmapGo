@@ -1,3 +1,5 @@
+import {selectedTabTitle,selectedTabDescription} from "./../StarMap-Constant.js"
+
 class UIElement {
 
 	constructor(dom) {
@@ -1117,7 +1119,16 @@ class UITabbedPanel extends UIDiv {
 
 		if (tab) {
 
+
 			tab.addClass('selected');
+			if(this.tabs[0].parent.getId() == 'sidebarTabMain'){
+			if(document.getElementById("sidebarTitleText")){
+				let selectedTab = document.getElementById(id).innerText;
+				document.getElementById("sidebarTitleText").innerText = document.getElementById(id).innerText;
+				document.getElementById("sidebarTitleDescription").innerText = `Selected Tab is ${selectedTab}`;
+				
+			}
+		}
 
 		}
 
@@ -1392,7 +1403,7 @@ class BootstrapModal extends UIElement {
 				modalBody.addClass(res);
 			})
 		}
-		modalBody.setTextContent(modalConfig.modalBodyContent);
+		modalBody.setInnerHTML(modalConfig.modalBodyContent);
 		modalContent.add(modalBody);
 		//#endregion 
 
@@ -1414,7 +1425,7 @@ class BootstrapModal extends UIElement {
 			button.setAttributeOfElement("href", `#${modalConfig.bootstrapModalPopUpId}`);
 		}
 		button.setId(modalConfig.modalFooterButtonId);
-		button.setTextContent("Start");
+		button.setTextContent(modalConfig.footerButtonText);
 
 		if (modalConfig.modalFooterButtonClassList?.length > 0) {
 			modalConfig.modalFooterButtonClassList.forEach(res => {

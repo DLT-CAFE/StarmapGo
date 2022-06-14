@@ -159,12 +159,29 @@
 .toggleButton1{
     display: inline-block;
     position: absolute;
-    top: 20px;
-    right: 0;
-    margin-right: -28px;
- height: 50px;
- width: 50px;
+    top: 95px;
+    left: 380px;
+    /* margin-right: -28px; */
+    height: 50px;
+    width: 50px;
     transition: .3s;
+
+ 
+}
+
+.toggleButtonMoveBackWard{
+ 
+    left: 25px;
+    transition: all 2s ease;
+  
+ 
+}
+
+.toggleButtonMove{
+ 
+    left: 380px;
+    transition: all 2s ease;
+  
  
 }
 

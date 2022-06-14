@@ -42,4 +42,8 @@ export const skyBoxImagesList = ['./images/viewport/viewportskymapBK.png',
 			'./images/viewport/image5.jpg',
 			'./images/viewport/image6.jpg',
 		  ];
+
+
+export var selectedTabTitle="";
+export var selectedTabDescription="";
 	

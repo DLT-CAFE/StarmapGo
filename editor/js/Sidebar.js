@@ -16,7 +16,7 @@ import {GeoData} from './../starmapgo/GeoData.js';
 function Sidebar(editor) {
 	const signals = editor.signals;
 	const strings = editor.strings;
-
+	const sideMainSection = new UIDiv();
 	const toggleSec = new UIDiv();
 	toggleSec.setId("toggleButton");
 	const toggleButton = new UIButton();
@@ -32,7 +32,7 @@ function Sidebar(editor) {
 	toggleSec.add(toggleButton);
 	toggleSec.addClass("toggleButton1");
 
-
+	
 
 	const sideMain = new UIDiv();
 
@@ -42,26 +42,29 @@ function Sidebar(editor) {
 	//#endregion
 
 
-	sideMain.add(toggleSec);
+	//sideMain.add(toggleSec);
 	sideMain.setId("sidebar1");
 	sideMain.addClass("sideBarMainShow");
 	sideMain.setAttributeOfElement("data-augmented-ui", "tl-clip tr-clip bl-clip  br-clip bl-clip both");
 	const sidebarTitle = new UIDiv();
 	sidebarTitle.setId("sidebarTitle");
 
-	const titleText = new UIText("Title");
+	let title = strings.getKey('sidebar/scene').toUpperCase();
+	const titleText = new UIText(title);
 	titleText.addClass("sidebarTitleSection");
+	titleText.setId("sidebarTitleText");
 	sidebarTitle.add(titleText);
 
 
 
 
-	const titleDescription = new UIText("Tab Description Text");
+	const titleDescription = new UIText("Description");
 	titleDescription.addClass("titleDescription")
 	sidebarTitle.add(titleDescription);
 
-	const titleDescription1 = new UIText("Lore Ipsum");
+	const titleDescription1 = new UIText(`Selected Tab is ${title}`);
 	titleDescription1.addClass("titleDescription")
+	titleDescription1.setId("sidebarTitleDescription")
 	sidebarTitle.add(titleDescription1);
 
 
@@ -69,7 +72,7 @@ function Sidebar(editor) {
 
 
 	const container = new UITabbedPanel();
-	//container.setId( 'sidebar' );
+	container.setId( 'sidebarTabMain' );
 	//container.add(togggleButton);
 	const scene = new UISpan().add(
 		new SidebarScene(editor),
@@ -86,7 +89,7 @@ function Sidebar(editor) {
 	const registryB = new RegistryB(editor);
 	container.addTab('registryA', strings.getKey('sidebar/registryA'), registryA,"tabsSetting");
 	container.addTab('registryB', strings.getKey('sidebar/registryB'), registryB,"tabsSetting");
-	container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
+	//container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
 	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
 	container.addTab('geoData', strings.getKey('sidebar/geoData'), geoData,"tabsSetting");
 	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
@@ -137,10 +140,16 @@ function Sidebar(editor) {
 
 			sideBarShow = false;
 			sideMain.setClass("sideBarMainHide");
+			toggleSec.removeClass("toggleButtonMove");
+			toggleSec.addClass("toggleButtonMoveBackWard");
+			
+	
 		}
 		else {
 			sideBarShow = true;
 			sideMain.setClass("sideBarMainShow");
+			toggleSec.addClass("toggleButtonMove");
+			toggleSec.removeClass("toggleButtonMoveBackWard");
 
 		}
 
@@ -148,9 +157,10 @@ function Sidebar(editor) {
 	});
 
 
+	sideMainSection.add(toggleSec);
+	sideMainSection.add(sideMain);
 
-
-	return sideMain;
+	return sideMainSection;
 
 }
 
