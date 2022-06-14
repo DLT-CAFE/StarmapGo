@@ -108,13 +108,17 @@ function SidebarProjectRenderer( editor ) {
 
 	function createRenderer() {
 
-		currentRenderer = new THREE.WebGLRenderer( { antialias: antialiasBoolean.getValue() } );
-		currentRenderer.outputEncoding = THREE.sRGBEncoding;
-		currentRenderer.physicallyCorrectLights = physicallyCorrectLightsBoolean.getValue();
-		currentRenderer.shadowMap.enabled = shadowsBoolean.getValue();
-		currentRenderer.shadowMap.type = parseFloat( shadowTypeSelect.getValue() );
-		currentRenderer.toneMapping = parseFloat( toneMappingSelect.getValue() );
-		currentRenderer.toneMappingExposure = toneMappingExposure.getValue();
+		//{ antialias: true, alpha: true }
+		currentRenderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+		//currentRenderer = new THREE.WebGLRenderer( { antialias: antialiasBoolean.getValue() } );
+		// currentRenderer.outputEncoding = THREE.sRGBEncoding;
+		// currentRenderer.physicallyCorrectLights = physicallyCorrectLightsBoolean.getValue();
+		// currentRenderer.shadowMap.enabled = shadowsBoolean.getValue();
+		// currentRenderer.shadowMap.type = parseFloat( shadowTypeSelect.getValue() );
+		// currentRenderer.toneMapping = parseFloat( toneMappingSelect.getValue() );
+		// currentRenderer.toneMappingExposure = toneMappingExposure.getValue();
+
+		console.log("I am here in creating renderer now");
 
 		signals.rendererCreated.dispatch( currentRenderer );
 		signals.rendererUpdated.dispatch();
