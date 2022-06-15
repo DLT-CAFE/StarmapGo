@@ -437,7 +437,11 @@ function Viewport(editor) {
 
 	signals.sceneGraphChanged.add(function (showGrid) {
 
+		if(showGrid !== undefined){
 		grid.visible = showGrid;
+		transformControls.isTransformControls = showGrid;
+		showSceneHelpers = showGrid;
+		}
 		render();
 
 	});
