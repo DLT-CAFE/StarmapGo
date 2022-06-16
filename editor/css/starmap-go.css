@@ -312,7 +312,7 @@ margin-right: -60px !important;
     --aug-border-all: 1px;
     --aug-inlay-all: 10px;
     --aug-inlay-bg: #fefefd57; 
-    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  
     backdrop-filter: blur(7.5px);
     -webkit-backdrop-filter: blur(7.5px);
 }
@@ -355,11 +355,11 @@ margin-right: -60px !important;
 
   .modallogo{
     height: 250px;
-    width: 535px;
-    background-image: url('./../images/LogoModal1.png');
+    width: 618px;
+    background-image: url('./../images/StramapComet55.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-position: -47px;
+    background-size: contain; 
 
   }
   .Row .Text{

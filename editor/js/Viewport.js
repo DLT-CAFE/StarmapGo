@@ -43,7 +43,7 @@ function Viewport(editor) {
 	//#endregion
 
 	//#region creating skybox for background image
-	const textureCube = new THREE.CubeTextureLoader().load(skyBoxImagesList);
+	const textureCube = new THREE.CubeTextureLoader().load(skyBoxImagesList1);
 	textureCube.mapping = THREE.CubeRefractionMapping;
 	scene.background = textureCube;
 	setTimeout(res => {

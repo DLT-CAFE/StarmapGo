@@ -16,20 +16,20 @@ export const fogFar =100;
 //#endregion
 
 
-export const skyBoxImagesList = ['./images/viewport/viewportskymapBK.png',
-    './images/viewport/viewportskymapDN.png',
-    './images/viewport/viewportskymapFT.png',
-    './images/viewport/viewportskymapLF.png',
-    './images/viewport/viewportskymapRT.png',
-    './images/viewport/viewportskymapUP.png'];
+export const skyBoxImagesList = ['./images/viewport/front.png',
+    './images/viewport/back.png',
+    './images/viewport/top3.png',
+    './images/viewport/bottom2.png',
+    './images/viewport/left.png',
+    './images/viewport/right.png'];
 
     export const skyBoxImagesList1 =   [
+		'./images/viewport/SpaceFront.png',
 		'./images/viewport/SpaceBack.png',
-		'./images/viewport/SpaceBottom.png',
-		'./images/viewport/green_sky_front5.png',
-		'./images/viewport/SpaceLeft.png', 
+		'./images/viewport/SpaceTop1.png',
+		'./images/viewport/SpaceBottom5.png',  
 		'./images/viewport/SpaceRight.png', 
-		'./images/viewport/SpaceTop.png',
+		'./images/viewport/SpaceLeft.png',
 	];
 
 
