@@ -79,6 +79,15 @@
 
 }
 
+.submitButtonPopUp {
+  
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 100vh;
+    animation: fadeIn;
+    animation-duration:5s !important;
+}
+
 
 
 .step1-content {

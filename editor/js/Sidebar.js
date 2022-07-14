@@ -1,4 +1,4 @@
-import { UITabbedPanel, UISpan, UIDiv, UIButton, UIHorizontalRule, UIText, UIIcon } from './libs/ui.js';
+import { UITabbedPanel, UISpan, UIDiv, UIButton, UIHorizontalRule, UIText, UIIcon,BootstrapModal } from './libs/ui.js';
 
 import { SidebarScene } from './Sidebar.Scene.js';
 import { SidebarProperties } from './Sidebar.Properties.js';
@@ -7,10 +7,10 @@ import { SidebarAnimation } from './Sidebar.Animation.js';
 import { SidebarProject } from './Sidebar.Project.js';
 import { SidebarSettings } from './Sidebar.Settings.js';
 import { SidebarEntity } from './Sidebar.Entity.js';
-import {AddModalShape} from './../starmapgo/AddModalShape.js';
-import {RegistryA} from './../starmapgo/RegistryA.js';
-import {RegistryB} from './../starmapgo/RegistryB.js';
-import {GeoData} from './../starmapgo/GeoData.js';
+import { AddModalShape } from './../starmapgo/AddModalShape.js';
+import { RegistryA } from './../starmapgo/RegistryA.js';
+import { RegistryB } from './../starmapgo/RegistryB.js';
+import { GeoData } from './../starmapgo/GeoData.js';
 
 
 function Sidebar(editor) {
@@ -32,7 +32,7 @@ function Sidebar(editor) {
 	toggleSec.add(toggleButton);
 	toggleSec.addClass("toggleButton1");
 
-	
+
 
 	const sideMain = new UIDiv();
 
@@ -72,7 +72,7 @@ function Sidebar(editor) {
 
 
 	const container = new UITabbedPanel();
-	container.setId( 'sidebarTabMain' );
+	container.setId('sidebarTabMain');
 	//container.add(togggleButton);
 	const scene = new UISpan().add(
 		new SidebarScene(editor),
@@ -87,17 +87,17 @@ function Sidebar(editor) {
 	const registryA = new RegistryA(editor);
 	const geoData = new GeoData(editor);
 	const registryB = new RegistryB(editor);
-	container.addTab('registryA', strings.getKey('sidebar/registryA'), registryA,"tabsSetting");
-	container.addTab('registryB', strings.getKey('sidebar/registryB'), registryB,"tabsSetting");
+	container.addTab('registryA', strings.getKey('sidebar/registryA'), registryA, "tabsSetting");
+	container.addTab('registryB', strings.getKey('sidebar/registryB'), registryB, "tabsSetting");
 	//container.addTab('entity', strings.getKey('sidebar/entity'), settings,"tabsSetting");
-	container.addTab('scene', strings.getKey('sidebar/scene'), scene,"tabsSetting");
-	container.addTab('geoData', strings.getKey('sidebar/geoData'), geoData,"tabsSetting");
-	container.addTab('project', strings.getKey('sidebar/project'), project,"tabsSetting");
-	container.addTab('settings', strings.getKey('sidebar/settings'), settings,"tabsSetting");
+	container.addTab('scene', strings.getKey('sidebar/scene'), scene, "tabsSetting");
+	container.addTab('geoData', strings.getKey('sidebar/geoData'), geoData, "tabsSetting");
+	container.addTab('project', strings.getKey('sidebar/project'), project, "tabsSetting");
+	container.addTab('settings', strings.getKey('sidebar/settings'), settings, "tabsSetting");
 	// container.addTab('addShape', strings.getKey('sidebar/properties/addShape'), addShape,"tabsSetting");
 
 
-	
+
 	container.select('scene');
 
 
@@ -106,8 +106,8 @@ function Sidebar(editor) {
 	let sideBarBottom = new UIDiv();
 	//sideBarBottom.setId("sidebarTitle");
 	sideBarBottom.addClass("bottomSection");
-	
-	sideBarBottom.addClass("d-flex"); 
+
+	sideBarBottom.addClass("d-flex");
 	sideBarBottom.addClass("justify-content-around");
 
 	let saveButton = new UIButton();
@@ -124,39 +124,65 @@ function Sidebar(editor) {
 
 	sideBarBottom.add(saveButton);
 
-	sideBarBottom.add(submitButton);
+
 
 	sideMain.add(sidebarTitle);
 	sideMain.add(container);
-	sideMain.add(sideBarBottom);
 
+	let bootstrapConfig = {
+		bootstrapModalPopUpId: "submit-popUp",
+		modalPopUpClassList: ["submitButtonPopUp"],
+		//augmentedUiClass: "tl-clip br-clip both",
+		modalDailogClassList: [],
+		modalContentClassList: ["step1-content", "p-5", "pb-3"],
+
+		modalBodyClassList: ["display-6" ],
+		modalBodyContent: "Data Submitted Successfully",
+		modalFooterClassList: ["border-0", "justify-content-center", "p-0"],
+		modalFooterButtonClassList: ["step1-startButton"],
+		modalFooterButtonId: "submit-popButton",
+		//nextPopUpId: "second-PopModal",
+		footerButtonText: "Cancel"
+	}
+
+	let bootstrapModal = new BootstrapModal(bootstrapConfig);
+	document.body.appendChild(bootstrapModal['dom'].dom);
 
 
 	let sideBarShow = true;
-
 	toggleButton.onClick(function () {
-
 		if (sideBarShow) {
-
 			sideBarShow = false;
 			sideMain.setClass("sideBarMainHide");
 			toggleSec.removeClass("toggleButtonMove");
 			toggleSec.addClass("toggleButtonMoveBackWard");
-			
-	
 		}
 		else {
 			sideBarShow = true;
 			sideMain.setClass("sideBarMainShow");
 			toggleSec.addClass("toggleButtonMove");
 			toggleSec.removeClass("toggleButtonMoveBackWard");
-
+	
 		}
-
-
 	});
 
 
+	submitButton.onClick(function () {
+		
+			
+			//#region Showing the First Bootstrap Modal on the Start
+			var myModal = new bootstrap.Modal(document.getElementById('submit-popUp'), {
+				keyboard: false
+			})
+			myModal.show();
+		
+	
+	});
+
+
+
+	sideBarBottom.add(submitButton);
+	sideMain.add(sideBarBottom);
 	sideMainSection.add(toggleSec);
 	sideMainSection.add(sideMain);
 
