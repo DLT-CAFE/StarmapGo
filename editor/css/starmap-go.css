@@ -540,6 +540,18 @@ legend {
   }
 
 
+  .my-augborder {
+    --aug-border-bg: linear-gradient(to bottom right, teal, rebeccapurple);
+    --aug-tl: 40px;
+    --aug-tr: 30px;
+    --aug-br: 20px;
+    --aug-br-extend1: 25%;
+    --aug-br-extend2: 50%;
+}
+
+
+
+
   .btn-design-a:hover {
     --aug-inlay-bg: #060606b9;
     --aug-inlay-opacity: 0.6;

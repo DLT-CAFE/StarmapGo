@@ -134,7 +134,7 @@ function Sidebar(editor) {
 		modalPopUpClassList: ["submitButtonPopUp"],
 		augmentedUiClass: "tl-clip br-clip both",
 		modalDailogClassList: [],
-		modalContentClassList: ["step1-content", "p-5", "pb-3"],
+		modalContentClassList: ["step1-content", "p-5", "pb-3","my-augborder" ],
 
 		modalBodyClassList: ["display-6" ],
 		modalBodyContent: "Data Submitted Successfully",
