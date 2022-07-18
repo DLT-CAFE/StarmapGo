@@ -132,7 +132,7 @@ function Sidebar(editor) {
 	let bootstrapConfig = {
 		bootstrapModalPopUpId: "submit-popUp",
 		modalPopUpClassList: ["submitButtonPopUp"],
-		//augmentedUiClass: "tl-clip br-clip both",
+		augmentedUiClass: "tl-clip br-clip both",
 		modalDailogClassList: [],
 		modalContentClassList: ["step1-content", "p-5", "pb-3"],
 
@@ -142,7 +142,7 @@ function Sidebar(editor) {
 		modalFooterButtonClassList: ["step1-startButton"],
 		modalFooterButtonId: "submit-popButton",
 		//nextPopUpId: "second-PopModal",
-		footerButtonText: "Cancel"
+		footerButtonText: "Close"
 	}
 
 	let bootstrapModal = new BootstrapModal(bootstrapConfig);
