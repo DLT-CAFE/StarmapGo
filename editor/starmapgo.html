@@ -15,15 +15,15 @@
 	<link rel="shortcut icon" href="../files/favicon.ico" media="(prefers-color-scheme: light)" />
 	<link href="./styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
 		integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="js/libs/codemirror/codemirror.css">
-		<link rel="stylesheet" href="js/libs/codemirror/theme/monokai.css">
-		<link rel="stylesheet" href="js/libs/codemirror/addon/dialog.css">
-		<link rel="stylesheet" href="js/libs/codemirror/addon/show-hint.css">
-		<link rel="stylesheet" href="js/libs/codemirror/addon/tern.css">
+	<link rel="stylesheet" href="js/libs/codemirror/codemirror.css">
+	<link rel="stylesheet" href="js/libs/codemirror/theme/monokai.css">
+	<link rel="stylesheet" href="js/libs/codemirror/addon/dialog.css">
+	<link rel="stylesheet" href="js/libs/codemirror/addon/show-hint.css">
+	<link rel="stylesheet" href="js/libs/codemirror/addon/tern.css">
 </head>
 
 <body>
@@ -54,7 +54,7 @@
 	</div> -->
 
 
-	<div  id="preloader" class="preloader-1 preloader-div">
+	<div id="preloader" class="preloader-1 preloader-div">
 		<div class="preloader-div">Loading</div>
 		<span class="line line-1"></span>
 		<span class="line line-2"></span>
@@ -69,7 +69,7 @@
 		<div>
 			<button type="button" class="step2-startButton" onclick="OpenPopUpAndPlayAudio()">Start</button>
 		</div>
-	  </div>
+	</div>
 
 
 	<!----------------------CODE FOR INITIAL PRE-LOADING SCREEEN ENDS HERE---------------------->
@@ -80,10 +80,10 @@
 	<script type="text/javascript">
 
 
-        // this is for the audio play/ stop functionality button.
-          var audioIsPlaying = true;
-		  //#region 
-		
+		// this is for the audio play/ stop functionality button.
+		var audioIsPlaying = true;
+		//#region 
+
 
 		function createAudioTag() {
 			var x = document.createElement("AUDIO");
@@ -93,8 +93,8 @@
 			}
 			x.setAttribute("hidden", "hidden");
 			x.setAttribute("controls", "controls");
-			if(audioIsPlaying){
-			x.setAttribute("autoplay", "autoplay");
+			if (audioIsPlaying) {
+				x.setAttribute("autoplay", "autoplay");
 			}
 			x.setAttribute("loop", "loop");
 			document.body.appendChild(x);
@@ -103,23 +103,23 @@
 
 		function playAudio() {
 			if (document.getElementById('audioplay')) {
-				if(!audioIsPlaying){
-					document.getElementById('audioplay').pause();	
-				}else{
-				document.getElementById('audioplay').play();
+				if (!audioIsPlaying) {
+					document.getElementById('audioplay').pause();
+				} else {
+					document.getElementById('audioplay').play();
 				}
 			}
 		}
 
-		function createAudioMuteButton(){
+		function createAudioMuteButton() {
 			let createSubmit = document.createElement("button");
 			createSubmit.classList.add("btn");
 			createSubmit.classList.add("btn-light");
 			createSubmit.classList.add("audio-muteUnMute");
-			createSubmit.innerText = audioIsPlaying ? "Mute":"UnMute";
+			createSubmit.innerText = audioIsPlaying ? "Mute" : "UnMute";
 			createSubmit.addEventListener('click', () => {
 				audioIsPlaying = !audioIsPlaying;
-				createSubmit.innerText = audioIsPlaying ? "Mute":"UnMute";
+				createSubmit.innerText = audioIsPlaying ? "Mute" : "UnMute";
 				playAudio();
 
 			})
@@ -237,7 +237,7 @@
 		signals.initializeStarMapGo.add(function () {
 
 			intializeStartMapGoUI();
-		
+
 		});
 
 
@@ -293,7 +293,7 @@
 			modalFooterButtonId: "second-popButton",
 			nextPopUpId: "third-PopModal",
 			footerButtonText: "Continue"
-		} 
+		}
 
 		let bootstrapModal1 = new BootstrapModal(bootstrapConfig1);
 		bootstrapModal1.bootstrapModalButton.onClick(res => {
@@ -348,7 +348,7 @@
 			element.remove();
 			init();
 			//render(); // remove when using next line for animation loop (requestAnimationFrame)
-			animate();
+			//animate();
 
 			//intializeStartMapGoUI();
 		})
@@ -378,10 +378,10 @@
 			createSubmit.addEventListener('click', () => {
 				removeAllChildNotesOtherThanAudioFromBody();
 				init();
-				animate();
+				//animate();
 				createAudioTag();
 				playAudio();
-			
+
 
 			})
 
@@ -413,7 +413,7 @@
 			//
 
 
-	
+
 
 
 
@@ -577,6 +577,18 @@
 
 		let camera, controls, scene, renderer;
 
+function createIframeForOrbitControl(){
+		var ifrm = document.createElement('iframe');
+		ifrm.setAttribute('id', 'ifrm'); // assign an id
+		ifrm.classList.add("w-100");
+
+		debugger;
+		ifrm.style.height = "660px";
+		document.body.appendChild(ifrm); // to place at end of document
+		ifrm.setAttribute('src', '../examples/misc_controls_orbit.html');
+}
+
+
 
 		function init() {
 			const menubar = new Menubar(editor);
@@ -602,68 +614,69 @@
 			//menubar.dom.children[length - 1].appendChild(createSubmit);
 			document.body.appendChild(menubar.dom);
 			document.body.appendChild(createSubmit);
-			scene = new THREE.Scene();
-			scene.background = new THREE.Color(0xcccccc);
-			scene.fog = new THREE.FogExp2(0xcccccc, 0.002);
+			createIframeForOrbitControl();
+			// scene = new THREE.Scene();
+			// scene.background = new THREE.Color(0xcccccc);
+			// scene.fog = new THREE.FogExp2(0xcccccc, 0.002);
 
-			renderer = new THREE.WebGLRenderer({ antialias: true });
-			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
+			// renderer = new THREE.WebGLRenderer({ antialias: true });
+			// renderer.setPixelRatio(window.devicePixelRatio);
+			// renderer.setSize(window.innerWidth, window.innerHeight);
+			// document.body.appendChild(renderer.domElement);
 
-			camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-			camera.position.set(400, 200, 0);
+			// camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+			// camera.position.set(400, 200, 0);
 
-			// controls
+			// // controls
 
-			controls = new OrbitControls(camera, renderer.domElement);
-			controls.listenToKeyEvents(window); // optional
+			// controls = new OrbitControls(camera, renderer.domElement);
+			// controls.listenToKeyEvents(window); // optional
 
-			//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
+			// //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 
-			controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
-			controls.dampingFactor = 0.05;
+			// controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+			// controls.dampingFactor = 0.05;
 
-			controls.screenSpacePanning = false;
+			// controls.screenSpacePanning = false;
 
-			controls.minDistance = 100;
-			controls.maxDistance = 500;
+			// controls.minDistance = 100;
+			// controls.maxDistance = 500;
 
-			controls.maxPolarAngle = Math.PI / 2;
+			// controls.maxPolarAngle = Math.PI / 2;
 
-			// world
+			// // world
 
-			const geometry = new THREE.CylinderGeometry(0, 10, 30, 4, 1);
-			const material = new THREE.MeshPhongMaterial({ color: 0xffffff, flatShading: true });
+			// const geometry = new THREE.CylinderGeometry(0, 10, 30, 4, 1);
+			// const material = new THREE.MeshPhongMaterial({ color: 0xffffff, flatShading: true });
 
-			for (let i = 0; i < 500; i++) {
+			// for (let i = 0; i < 500; i++) {
 
-				const mesh = new THREE.Mesh(geometry, material);
-				mesh.position.x = Math.random() * 1600 - 800;
-				mesh.position.y = 0;
-				mesh.position.z = Math.random() * 1600 - 800;
-				mesh.updateMatrix();
-				mesh.matrixAutoUpdate = false;
-				scene.add(mesh);
+			// 	const mesh = new THREE.Mesh(geometry, material);
+			// 	mesh.position.x = Math.random() * 1600 - 800;
+			// 	mesh.position.y = 0;
+			// 	mesh.position.z = Math.random() * 1600 - 800;
+			// 	mesh.updateMatrix();
+			// 	mesh.matrixAutoUpdate = false;
+			// 	scene.add(mesh);
 
-			}
+			// }
 
-			// lights
+			// // lights
 
-			const dirLight1 = new THREE.DirectionalLight(0xffffff);
-			dirLight1.position.set(1, 1, 1);
-			scene.add(dirLight1);
+			// const dirLight1 = new THREE.DirectionalLight(0xffffff);
+			// dirLight1.position.set(1, 1, 1);
+			// scene.add(dirLight1);
 
-			const dirLight2 = new THREE.DirectionalLight(0x002288);
-			dirLight2.position.set(- 1, - 1, - 1);
-			scene.add(dirLight2);
+			// const dirLight2 = new THREE.DirectionalLight(0x002288);
+			// dirLight2.position.set(- 1, - 1, - 1);
+			// scene.add(dirLight2);
 
-			const ambientLight = new THREE.AmbientLight(0x222222);
-			scene.add(ambientLight);
+			// const ambientLight = new THREE.AmbientLight(0x222222);
+			// scene.add(ambientLight);
 
 			//
 
-			window.addEventListener('resize', onWindowResize);
+		//	window.addEventListener('resize', onWindowResize);
 
 		}
 
