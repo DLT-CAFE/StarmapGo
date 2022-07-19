@@ -35,13 +35,23 @@ export const skyBoxImagesList = ['./images/viewport/front.png',
 
 	export const skyBoxImageListOnPlay=
 		[
-			'./images/viewport/image1.jpg',
-			'./images/viewport/image2.jpg',
-			'./images/viewport/image3.jpg',
-			'./images/viewport/image4.jpg',
-			'./images/viewport/image5.jpg',
-			'./images/viewport/image6.jpg',
+			'./images/viewport/skymap2/corona_up.png',
+			'./images/viewport/skymap2/corona_bk.png',
+			'./images/viewport/skymap2/corona_lf.png',
+			'./images/viewport/skymap2/corona_ft.png',
+			'./images/viewport/skymap2/corona_rt.png',
+			'./images/viewport/skymap2/corona_dn.png'
 		  ];
+
+		//   './images/viewport/skymap2/image1.jpg',
+		// 	'./images/viewport/image2.jpg',
+		// 	'./images/viewport/image3.jpg',
+		// 	'./images/viewport/image4.jpg',
+		// 	'./images/viewport/image5.jpg',
+		// 	'./images/viewport/image6.jpg',
+
+
+		  export const iframeForPlayer = "https://mixedreality.mozilla.org/hello-webxr/";
 
 
 export var selectedTabTitle="";
