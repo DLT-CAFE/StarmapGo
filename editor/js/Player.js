@@ -28,7 +28,7 @@ function Player( editor ) {
 
 	signals.startPlayer.add( function () {
 		let scene = editor.scene;
-	//	scene.visible =false;
+	//	scene.visible =false; // if we want to make the scene hide once the player is clicked than we can do this.
 		
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load(skyBoxImageListOnPlay);
@@ -42,7 +42,7 @@ function Player( editor ) {
 
 	signals.stopPlayer.add( function () {
 		let scene = editor.scene;
-	//	scene.visible =true;
+	//	scene.visible =true; // if we want to be scene visible when the player is stopped make this true.
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load(skyBoxImagesList);
 		texture.mapping = THREE.CubeRefractionMapping;

@@ -580,14 +580,7 @@
 
 		let camera, controls, scene, renderer;
 
-function createIframeForOrbitControl(){
-		var ifrm = document.createElement('iframe');
-		ifrm.setAttribute('id', 'ifrm'); // assign an id
-		ifrm.classList.add("w-100");
-		ifrm.style.height = "1000px";
-		document.body.appendChild(ifrm); // to place at end of document
-		ifrm.setAttribute('src', iframeForPlayer);
-}
+
 
 
 
@@ -729,8 +722,16 @@ function createIframeForOrbitControl(){
 		}
 
 
-
-
+		//#region function to show iframe in the player.js file
+		function createIframeForOrbitControl(){
+		var ifrm = document.createElement('iframe');
+		ifrm.setAttribute('id', 'ifrm'); // assign an id
+		ifrm.classList.add("w-100");
+		ifrm.style.height = "1000px";
+		document.body.appendChild(ifrm); // to place at end of document
+		ifrm.setAttribute('src', iframeForPlayer);
+}
+//#endregion
 
 
 	</script>

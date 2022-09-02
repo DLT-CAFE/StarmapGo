@@ -51,7 +51,9 @@ export const skyBoxImagesList = ['./images/viewport/front.png',
 		// 	'./images/viewport/image6.jpg',
 
 
+		//#region Iframe that is to be shown inside the player.js file.
 		  export const iframeForPlayer = "https://mixedreality.mozilla.org/hello-webxr/";
+		  //#endregion
 
 
 export var selectedTabTitle="";
